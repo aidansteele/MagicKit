@@ -5,7 +5,6 @@
 		activeExecutable = DDC92C0612619C1E0012DE28 /* MagicKitTest */;
 		activeTarget = DDC92C0412619C1E0012DE28 /* MagicKitTest */;
 		addToTargets = (
-			DDC92C0412619C1E0012DE28 /* MagicKitTest */,
 		);
 		codeSenseManager = DDC92975126186DA0012DE28 /* Code sense */;
 		executables = (
@@ -13,8 +12,8 @@
 		);
 		perUserDictionary = {
 			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
-				PBXFileTableDataSourceColumnSortingDirectionKey = 1;
-				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Target_ColumnID;
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
 					615,
@@ -186,6 +185,20 @@
 			DDC92C5412619E140012DE28 /* PBXTextBookmark */ = DDC92C5412619E140012DE28 /* PBXTextBookmark */;
 			DDC92C5712619E9A0012DE28 /* PBXTextBookmark */ = DDC92C5712619E9A0012DE28 /* PBXTextBookmark */;
 			DDC92C5812619E9A0012DE28 /* PBXTextBookmark */ = DDC92C5812619E9A0012DE28 /* PBXTextBookmark */;
+			DDC92C611261A1070012DE28 /* PBXTextBookmark */ = DDC92C611261A1070012DE28 /* PBXTextBookmark */;
+			DDC92C621261A1070012DE28 /* PBXTextBookmark */ = DDC92C621261A1070012DE28 /* PBXTextBookmark */;
+			DDC92C631261A1070012DE28 /* PBXTextBookmark */ = DDC92C631261A1070012DE28 /* PBXTextBookmark */;
+			DDC92C641261A1070012DE28 /* PBXTextBookmark */ = DDC92C641261A1070012DE28 /* PBXTextBookmark */;
+			DDC92C651261A1070012DE28 /* PBXTextBookmark */ = DDC92C651261A1070012DE28 /* PBXTextBookmark */;
+			DDC92C661261A1070012DE28 /* PBXTextBookmark */ = DDC92C661261A1070012DE28 /* PBXTextBookmark */;
+			DDC92C671261A1070012DE28 /* PBXTextBookmark */ = DDC92C671261A1070012DE28 /* PBXTextBookmark */;
+			DDC92C6F1261A6320012DE28 /* PBXTextBookmark */ = DDC92C6F1261A6320012DE28 /* PBXTextBookmark */;
+			DDC92C701261A6320012DE28 /* PBXTextBookmark */ = DDC92C701261A6320012DE28 /* PBXTextBookmark */;
+			DDC92C711261A63B0012DE28 /* PBXTextBookmark */ = DDC92C711261A63B0012DE28 /* PBXTextBookmark */;
+			DDC92C721261A63B0012DE28 /* PBXTextBookmark */ = DDC92C721261A63B0012DE28 /* PBXTextBookmark */;
+			DDC92C731261A63B0012DE28 /* PBXTextBookmark */ = DDC92C731261A63B0012DE28 /* PBXTextBookmark */;
+			DDC92C741261A63B0012DE28 /* PBXTextBookmark */ = DDC92C741261A63B0012DE28 /* PBXTextBookmark */;
+			DDC92C751261A63B0012DE28 /* PBXTextBookmark */ = DDC92C751261A63B0012DE28 /* PBXTextBookmark */;
 		};
 		sourceControlManager = DDC92974126186DA0012DE28 /* Source Control */;
 		userBuildSettings = {
@@ -266,6 +279,13 @@
 			sepNavVisRange = "{3289, 616}";
 		};
 	};
+	DDC92993126187080012DE28 /* readelf.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {793, 3653}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1492}";
+		};
+	};
 	DDC92995126187080012DE28 /* softmagic.c */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {899, 26442}}";
@@ -283,9 +303,9 @@
 	};
 	DDC929BC1261872F0012DE28 /* config.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {793, 3796}}";
-			sepNavSelRange = "{7104, 0}";
-			sepNavVisRange = "{6618, 485}";
+			sepNavIntBoundsRect = "{{0, 0}, {793, 3952}}";
+			sepNavSelRange = "{1178, 0}";
+			sepNavVisRange = "{0, 1303}";
 		};
 	};
 	DDC929C8126187650012DE28 /* PBXTextBookmark */ = {
@@ -375,7 +395,7 @@
 		fRef = DDC929BC1261872F0012DE28 /* config.h */;
 		name = "config.h: 279";
 		rLen = 0;
-		rLoc = 7104;
+		rLoc = 8152;
 		rType = 0;
 		vrLen = 485;
 		vrLoc = 6619;
@@ -402,9 +422,9 @@
 	};
 	DDC929DE126187DA0012DE28 /* MagicKit.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {793, 356}}";
-			sepNavSelRange = "{267, 0}";
-			sepNavVisRange = "{0, 639}";
+			sepNavIntBoundsRect = "{{0, 0}, {793, 559}}";
+			sepNavSelRange = "{1261, 417}";
+			sepNavVisRange = "{686, 1000}";
 		};
 	};
 	DDC929E4126187E50012DE28 /* PBXTextBookmark */ = {
@@ -452,7 +472,7 @@
 		fRef = DDC929BC1261872F0012DE28 /* config.h */;
 		name = "config.h: 279";
 		rLen = 0;
-		rLoc = 7104;
+		rLoc = 8152;
 		rType = 0;
 		vrLen = 486;
 		vrLoc = 6618;
@@ -556,7 +576,7 @@
 		fRef = DDC929BC1261872F0012DE28 /* config.h */;
 		name = "config.h: 279";
 		rLen = 0;
-		rLoc = 7104;
+		rLoc = 8152;
 		rType = 0;
 		vrLen = 131;
 		vrLoc = 6973;
@@ -773,7 +793,7 @@
 		fRef = DDC929BC1261872F0012DE28 /* config.h */;
 		name = "config.h: 279";
 		rLen = 0;
-		rLoc = 7104;
+		rLoc = 8152;
 		rType = 0;
 		vrLen = 484;
 		vrLoc = 6620;
@@ -799,10 +819,10 @@
 	};
 	DDC92B6E12618E120012DE28 /* MagicKit.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{2148, 77}\";\n            s = 0;\n        },\n                {\n            r = \"{2285, 76}\";\n            s = 0;\n        },\n                {\n            r = \"{2410, 77}\";\n            s = 0;\n        },\n                {\n            r = \"{2539, 76}\";\n            s = 0;\n        },\n                {\n            r = \"{2719, 90}\";\n            s = 0;\n        },\n                {\n            r = \"{2921, 90}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 3019}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1202, 1092}}";
-			sepNavSelRange = "{1066, 0}";
-			sepNavVisRange = "{0, 2060}";
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{3176, 77}\";\n            s = 0;\n        },\n                {\n            r = \"{3313, 76}\";\n            s = 0;\n        },\n                {\n            r = \"{3438, 77}\";\n            s = 0;\n        },\n                {\n            r = \"{3567, 76}\";\n            s = 0;\n        },\n                {\n            r = \"{3747, 90}\";\n            s = 0;\n        },\n                {\n            r = \"{3949, 90}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 4047}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {793, 1352}}";
+			sepNavSelRange = "{3, 0}";
+			sepNavVisRange = "{0, 1237}";
 			sepNavWindowFrame = "{{573, 130}, {1261, 1000}}";
 		};
 	};
@@ -850,7 +870,7 @@
 		fRef = DDC929DE126187DA0012DE28 /* MagicKit.h */;
 		name = "MagicKit.h: 14";
 		rLen = 0;
-		rLoc = 267;
+		rLoc = 1314;
 		rType = 0;
 		vrLen = 220;
 		vrLoc = 0;
@@ -870,7 +890,7 @@
 		fRef = DDC92B6E12618E120012DE28 /* MagicKit.m */;
 		name = "MagicKit.m: 9";
 		rLen = 0;
-		rLoc = 321;
+		rLoc = 1349;
 		rType = 0;
 		vrLen = 196;
 		vrLoc = 0;
@@ -880,7 +900,7 @@
 		fRef = DDC929DE126187DA0012DE28 /* MagicKit.h */;
 		name = "MagicKit.h: 14";
 		rLen = 0;
-		rLoc = 267;
+		rLoc = 1314;
 		rType = 0;
 		vrLen = 220;
 		vrLoc = 0;
@@ -890,7 +910,7 @@
 		fRef = DDC92B6E12618E120012DE28 /* MagicKit.m */;
 		name = "MagicKit.m: 9";
 		rLen = 0;
-		rLoc = 321;
+		rLoc = 1349;
 		rType = 0;
 		vrLen = 196;
 		vrLoc = 0;
@@ -900,7 +920,7 @@
 		fRef = DDC92B6E12618E120012DE28 /* MagicKit.m */;
 		name = "MagicKit.m: 10";
 		rLen = 0;
-		rLoc = 321;
+		rLoc = 1349;
 		rType = 0;
 		vrLen = 216;
 		vrLoc = 0;
@@ -910,7 +930,7 @@
 		fRef = DDC92B6E12618E120012DE28 /* MagicKit.m */;
 		name = "MagicKit.m: 16";
 		rLen = 0;
-		rLoc = 3012;
+		rLoc = 4040;
 		rType = 0;
 		vrLen = 247;
 		vrLoc = 0;
@@ -947,7 +967,7 @@
 		fRef = DDC92B6E12618E120012DE28 /* MagicKit.m */;
 		name = "MagicKit.m: 29";
 		rLen = 0;
-		rLoc = 859;
+		rLoc = 1887;
 		rType = 0;
 		vrLen = 737;
 		vrLoc = 34;
@@ -977,7 +997,7 @@
 		fRef = DDC92B6E12618E120012DE28 /* MagicKit.m */;
 		name = "MagicKit.m: 33";
 		rLen = 0;
-		rLoc = 1199;
+		rLoc = 2227;
 		rType = 0;
 		vrLen = 807;
 		vrLoc = 0;
@@ -997,7 +1017,7 @@
 		fRef = DDC929DE126187DA0012DE28 /* MagicKit.h */;
 		name = "MagicKit.h: 16";
 		rLen = 316;
-		rLoc = 214;
+		rLoc = 1261;
 		rType = 0;
 		vrLen = 593;
 		vrLoc = 0;
@@ -1007,7 +1027,7 @@
 		fRef = DDC92B6E12618E120012DE28 /* MagicKit.m */;
 		name = "MagicKit.m: 13";
 		rLen = 0;
-		rLoc = 353;
+		rLoc = 1381;
 		rType = 0;
 		vrLen = 807;
 		vrLoc = 0;
@@ -1017,7 +1037,7 @@
 		fRef = DDC92B6E12618E120012DE28 /* MagicKit.m */;
 		name = "MagicKit.m: 61";
 		rLen = 0;
-		rLoc = 1201;
+		rLoc = 2229;
 		rType = 0;
 		vrLen = 1932;
 		vrLoc = 0;
@@ -1054,7 +1074,7 @@
 		fRef = DDC929DE126187DA0012DE28 /* MagicKit.h */;
 		name = "MagicKit.h: 20";
 		rLen = 0;
-		rLoc = 400;
+		rLoc = 1447;
 		rType = 0;
 		vrLen = 639;
 		vrLoc = 0;
@@ -1064,7 +1084,7 @@
 		fRef = DDC92B6E12618E120012DE28 /* MagicKit.m */;
 		name = "MagicKit.m: 52";
 		rLen = 0;
-		rLoc = 1974;
+		rLoc = 3002;
 		rType = 0;
 		vrLen = 2642;
 		vrLoc = 75;
@@ -1074,7 +1094,7 @@
 		fRef = DDC92B6E12618E120012DE28 /* MagicKit.m */;
 		name = "MagicKit.m: 22";
 		rLen = 0;
-		rLoc = 686;
+		rLoc = 1714;
 		rType = 0;
 		vrLen = 2180;
 		vrLoc = 0;
@@ -1104,7 +1124,7 @@
 		fRef = DDC92B6E12618E120012DE28 /* MagicKit.m */;
 		name = "MagicKit.m: 31";
 		rLen = 0;
-		rLoc = 1163;
+		rLoc = 2191;
 		rType = 0;
 		vrLen = 2361;
 		vrLoc = 0;
@@ -1153,7 +1173,7 @@
 		fRef = DDC92B6E12618E120012DE28 /* MagicKit.m */;
 		name = "MagicKit.m: 24";
 		rLen = 0;
-		rLoc = 770;
+		rLoc = 1798;
 		rType = 0;
 		vrLen = 2356;
 		vrLoc = 0;
@@ -1193,7 +1213,7 @@
 		fRef = DDC929DE126187DA0012DE28 /* MagicKit.h */;
 		name = "MagicKit.h: 16";
 		rLen = 0;
-		rLoc = 267;
+		rLoc = 1314;
 		rType = 0;
 		vrLen = 639;
 		vrLoc = 0;
@@ -1203,7 +1223,7 @@
 		fRef = DDC929BC1261872F0012DE28 /* config.h */;
 		name = "config.h: 279";
 		rLen = 0;
-		rLoc = 7104;
+		rLoc = 8152;
 		rType = 0;
 		vrLen = 363;
 		vrLoc = 6741;
@@ -1213,7 +1233,7 @@
 		fRef = DDC929BC1261872F0012DE28 /* config.h */;
 		name = "config.h: 279";
 		rLen = 0;
-		rLoc = 7104;
+		rLoc = 8152;
 		rType = 0;
 		vrLen = 484;
 		vrLoc = 6620;
@@ -1233,7 +1253,7 @@
 		fRef = DDC92B6E12618E120012DE28 /* MagicKit.m */;
 		name = "MagicKit.m: 11";
 		rLen = 21;
-		rLoc = 185;
+		rLoc = 1213;
 		rType = 0;
 		vrLen = 2229;
 		vrLoc = 0;
@@ -1253,7 +1273,7 @@
 		fRef = DDC929BC1261872F0012DE28 /* config.h */;
 		name = "config.h: 279";
 		rLen = 0;
-		rLoc = 7104;
+		rLoc = 8152;
 		rType = 0;
 		vrLen = 484;
 		vrLoc = 6620;
@@ -1263,7 +1283,7 @@
 		fRef = DDC92B6E12618E120012DE28 /* MagicKit.m */;
 		name = "MagicKit.m: 28";
 		rLen = 0;
-		rLoc = 622;
+		rLoc = 1650;
 		rType = 0;
 		vrLen = 2060;
 		vrLoc = 0;
@@ -1399,7 +1419,7 @@
 		fRef = DDC929BC1261872F0012DE28 /* config.h */;
 		name = "config.h: 279";
 		rLen = 0;
-		rLoc = 7104;
+		rLoc = 8152;
 		rType = 0;
 		vrLen = 484;
 		vrLoc = 6620;
@@ -1524,7 +1544,7 @@
 		fRef = DDC929BC1261872F0012DE28 /* config.h */;
 		name = "config.h: 279";
 		rLen = 0;
-		rLoc = 7104;
+		rLoc = 8152;
 		rType = 0;
 		vrLen = 485;
 		vrLoc = 6618;
@@ -1607,6 +1627,167 @@
 		rLoc = 734;
 		rType = 0;
 		vrLen = 752;
+		vrLoc = 0;
+	};
+	DDC92C5912619EBC0012DE28 /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {793, 559}}";
+			sepNavSelRange = "{27, 1152}";
+			sepNavVisRange = "{0, 1246}";
+		};
+	};
+	DDC92C5D1261A07F0012DE28 /* LICENCE */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {793, 356}}";
+			sepNavSelRange = "{0, 1070}";
+			sepNavVisRange = "{0, 1070}";
+		};
+	};
+	DDC92C611261A1070012DE28 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DDC92C5D1261A07F0012DE28 /* LICENCE */;
+		name = "LICENCE: 1";
+		rLen = 1070;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1070;
+		vrLoc = 0;
+	};
+	DDC92C621261A1070012DE28 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DDC92C5912619EBC0012DE28 /* main.m */;
+		name = "main.m: 4";
+		rLen = 1152;
+		rLoc = 27;
+		rType = 0;
+		vrLen = 1246;
+		vrLoc = 0;
+	};
+	DDC92C631261A1070012DE28 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DDC929DE126187DA0012DE28 /* MagicKit.h */;
+		name = "MagicKit.h: 24";
+		rLen = 0;
+		rLoc = 1183;
+		rType = 0;
+		vrLen = 1253;
+		vrLoc = 0;
+	};
+	DDC92C641261A1070012DE28 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DDC92B6E12618E120012DE28 /* MagicKit.m */;
+		name = "MagicKit.m: 2";
+		rLen = 0;
+		rLoc = 3;
+		rType = 0;
+		vrLen = 1237;
+		vrLoc = 0;
+	};
+	DDC92C651261A1070012DE28 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DDC929BC1261872F0012DE28 /* config.h */;
+		name = "config.h: 25";
+		rLen = 0;
+		rLoc = 1178;
+		rType = 0;
+		vrLen = 1303;
+		vrLoc = 0;
+	};
+	DDC92C661261A1070012DE28 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DDC92993126187080012DE28 /* readelf.h */;
+		name = "readelf.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1492;
+		vrLoc = 0;
+	};
+	DDC92C671261A1070012DE28 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DDC9297B126187080012DE28 /* asprintf.c */;
+		name = "asprintf.c: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1516;
+		vrLoc = 0;
+	};
+	DDC92C6E1261A2640012DE28 /* README.markdown */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1657, 377}}";
+			sepNavSelRange = "{1435, 0}";
+			sepNavVisRange = "{0, 1260}";
+		};
+	};
+	DDC92C6F1261A6320012DE28 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DDC92995126187080012DE28 /* softmagic.c */;
+		name = "softmagic.c: 1585";
+		rLen = 0;
+		rLoc = 36372;
+		rType = 0;
+		vrLen = 238;
+		vrLoc = 36209;
+	};
+	DDC92C701261A6320012DE28 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DDC92983126187080012DE28 /* file.c */;
+		name = "file.c: 77";
+		rLen = 10;
+		rLoc = 2493;
+		rType = 0;
+		vrLen = 361;
+		vrLoc = 2259;
+	};
+	DDC92C711261A63B0012DE28 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DDC9297B126187080012DE28 /* asprintf.c */;
+		name = "asprintf.c: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1516;
+		vrLoc = 0;
+	};
+	DDC92C721261A63B0012DE28 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DDC92C5912619EBC0012DE28 /* main.m */;
+		name = "main.m: 4";
+		rLen = 1152;
+		rLoc = 27;
+		rType = 0;
+		vrLen = 1246;
+		vrLoc = 0;
+	};
+	DDC92C731261A63B0012DE28 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DDC929DE126187DA0012DE28 /* MagicKit.h */;
+		name = "MagicKit.h: 32";
+		rLen = 417;
+		rLoc = 1261;
+		rType = 0;
+		vrLen = 1000;
+		vrLoc = 686;
+	};
+	DDC92C741261A63B0012DE28 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DDC92C6E1261A2640012DE28 /* README.markdown */;
+		name = "README.markdown: 1";
+		rLen = 0;
+		rLoc = 1435;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	DDC92C751261A63B0012DE28 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DDC92C6E1261A2640012DE28 /* README.markdown */;
+		name = "README.markdown: 29";
+		rLen = 0;
+		rLoc = 1435;
+		rType = 0;
+		vrLen = 1260;
 		vrLoc = 0;
 	};
 }

@@ -73,6 +73,7 @@
 		DDC92C1012619C490012DE28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC92A8712618B050012DE28 /* Foundation.framework */; };
 		DDC92C4212619DB10012DE28 /* MagicKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* MagicKit.framework */; };
 		DDC92C5A12619EBC0012DE28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC92C5912619EBC0012DE28 /* main.m */; };
+		DDC92C5E1261A07F0012DE28 /* LICENCE in Resources */ = {isa = PBXBuildFile; fileRef = DDC92C5D1261A07F0012DE28 /* LICENCE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,8 @@
 		DDC92B6E12618E120012DE28 /* MagicKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicKit.m; sourceTree = "<group>"; };
 		DDC92C0512619C1E0012DE28 /* MagicKitTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MagicKitTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDC92C5912619EBC0012DE28 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MagicKitTest/main.m; sourceTree = SOURCE_ROOT; };
+		DDC92C5D1261A07F0012DE28 /* LICENCE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE; sourceTree = "<group>"; };
+		DDC92C6E1261A2640012DE28 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +217,8 @@
 			children = (
 				8DC2EF5A0486A6940098B216 /* Info.plist */,
 				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
+				DDC92C5D1261A07F0012DE28 /* LICENCE */,
+				DDC92C6E1261A2640012DE28 /* README.markdown */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
+				DDC92C5E1261A07F0012DE28 /* LICENCE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
