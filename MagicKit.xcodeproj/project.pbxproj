@@ -43,6 +43,31 @@
 		DDC929C1126187420012DE28 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC929C0126187420012DE28 /* libz.1.1.3.dylib */; };
 		DDC929DB126187CE0012DE28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D69BFE84028FC02AAC07 /* Foundation.framework */; };
 		DDC929DF126187DA0012DE28 /* MagicKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DDC929DE126187DA0012DE28 /* MagicKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DDC92A8812618B050012DE28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC92A8712618B050012DE28 /* Foundation.framework */; };
+		DDC92A8A12618B050012DE28 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC92A8912618B050012DE28 /* libz.dylib */; };
+		DDC92B1212618B3D0012DE28 /* readelf.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92992126187080012DE28 /* readelf.c */; };
+		DDC92B1312618B3D0012DE28 /* asprintf.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC9297B126187080012DE28 /* asprintf.c */; };
+		DDC92B1412618B3D0012DE28 /* compress.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC9297F126187080012DE28 /* compress.c */; };
+		DDC92B1612618B3D0012DE28 /* file.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92983126187080012DE28 /* file.c */; };
+		DDC92B1812618B3D0012DE28 /* strlcpy.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92997126187080012DE28 /* strlcpy.c */; };
+		DDC92B1B12618B3D0012DE28 /* magic.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92989126187080012DE28 /* magic.c */; };
+		DDC92B1C12618B3D0012DE28 /* cdf_time.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC9297C126187080012DE28 /* cdf_time.c */; };
+		DDC92B1D12618B3D0012DE28 /* strlcat.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92996126187080012DE28 /* strlcat.c */; };
+		DDC92B1E12618B3D0012DE28 /* cdf.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC9297D126187080012DE28 /* cdf.c */; };
+		DDC92B2212618B3D0012DE28 /* softmagic.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92995126187080012DE28 /* softmagic.c */; };
+		DDC92B2312618B3D0012DE28 /* print.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92990126187080012DE28 /* print.c */; };
+		DDC92B2412618B3D0012DE28 /* encoding.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92981126187080012DE28 /* encoding.c */; };
+		DDC92B2512618B3D0012DE28 /* ascmagic.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC9297A126187080012DE28 /* ascmagic.c */; };
+		DDC92B2612618B3D0012DE28 /* apprentice.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92978126187080012DE28 /* apprentice.c */; };
+		DDC92B2712618B3D0012DE28 /* apptype.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92979126187080012DE28 /* apptype.c */; };
+		DDC92B2912618B3D0012DE28 /* getopt_long.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92987126187080012DE28 /* getopt_long.c */; };
+		DDC92B2A12618B3D0012DE28 /* readmacho.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92994126187080012DE28 /* readmacho.c */; };
+		DDC92B2B12618B3D0012DE28 /* readcdf.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92991126187080012DE28 /* readcdf.c */; };
+		DDC92B2D12618B3D0012DE28 /* is_tar.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92988126187080012DE28 /* is_tar.c */; };
+		DDC92B2E12618B3D0012DE28 /* vasprintf.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92999126187080012DE28 /* vasprintf.c */; };
+		DDC92B2F12618B3D0012DE28 /* funcs.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92986126187080012DE28 /* funcs.c */; };
+		DDC92B3012618B3D0012DE28 /* fsmagic.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92985126187080012DE28 /* fsmagic.c */; };
+		DDC92B4B12618BEE0012DE28 /* MagicKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DDC929DE126187DA0012DE28 /* MagicKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -99,6 +124,9 @@
 		DDC929BC1261872F0012DE28 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		DDC929C0126187420012DE28 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		DDC929DE126187DA0012DE28 /* MagicKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicKit.h; sourceTree = "<group>"; };
+		DDC92A8412618AE90012DE28 /* libMagicKit-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libMagicKit-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDC92A8712618B050012DE28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DDC92A8912618B050012DE28 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +139,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DDC92A8212618AE90012DE28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDC92A8812618B050012DE28 /* Foundation.framework in Frameworks */,
+				DDC92A8A12618B050012DE28 /* libz.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -118,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				8DC2EF5B0486A6940098B216 /* MagicKit.framework */,
+				DDC92A8412618AE90012DE28 /* libMagicKit-iOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,7 +177,6 @@
 			children = (
 				1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */,
 				1058C7B2FEA5585E11CA2CBB /* Other Frameworks */,
-				DDC929C0126187420012DE28 /* libz.1.1.3.dylib */,
 			);
 			name = "External Frameworks and Libraries";
 			sourceTree = "<group>";
@@ -166,6 +203,9 @@
 		1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DDC929C0126187420012DE28 /* libz.1.1.3.dylib */,
+				DDC92A8712618B050012DE28 /* Foundation.framework */,
+				DDC92A8912618B050012DE28 /* libz.dylib */,
 				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -248,6 +288,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DDC92A8012618AE90012DE28 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDC92B4B12618BEE0012DE28 /* MagicKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -271,6 +319,23 @@
 			productReference = 8DC2EF5B0486A6940098B216 /* MagicKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		DDC92A8312618AE90012DE28 /* MagicKit-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDC92A8D12618B050012DE28 /* Build configuration list for PBXNativeTarget "MagicKit-iOS" */;
+			buildPhases = (
+				DDC92A8012618AE90012DE28 /* Headers */,
+				DDC92A8112618AE90012DE28 /* Sources */,
+				DDC92A8212618AE90012DE28 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MagicKit-iOS";
+			productName = "MagicKit-iOS";
+			productReference = DDC92A8412618AE90012DE28 /* libMagicKit-iOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -292,6 +357,7 @@
 			projectRoot = "";
 			targets = (
 				8DC2EF4F0486A6940098B216 /* MagicKit */,
+				DDC92A8312618AE90012DE28 /* MagicKit-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -333,6 +399,35 @@
 				DDC929B8126187080012DE28 /* strlcat.c in Sources */,
 				DDC929B9126187080012DE28 /* strlcpy.c in Sources */,
 				DDC929BB126187080012DE28 /* vasprintf.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDC92A8112618AE90012DE28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDC92B1212618B3D0012DE28 /* readelf.c in Sources */,
+				DDC92B1312618B3D0012DE28 /* asprintf.c in Sources */,
+				DDC92B1412618B3D0012DE28 /* compress.c in Sources */,
+				DDC92B1612618B3D0012DE28 /* file.c in Sources */,
+				DDC92B1812618B3D0012DE28 /* strlcpy.c in Sources */,
+				DDC92B1B12618B3D0012DE28 /* magic.c in Sources */,
+				DDC92B1C12618B3D0012DE28 /* cdf_time.c in Sources */,
+				DDC92B1D12618B3D0012DE28 /* strlcat.c in Sources */,
+				DDC92B1E12618B3D0012DE28 /* cdf.c in Sources */,
+				DDC92B2212618B3D0012DE28 /* softmagic.c in Sources */,
+				DDC92B2312618B3D0012DE28 /* print.c in Sources */,
+				DDC92B2412618B3D0012DE28 /* encoding.c in Sources */,
+				DDC92B2512618B3D0012DE28 /* ascmagic.c in Sources */,
+				DDC92B2612618B3D0012DE28 /* apprentice.c in Sources */,
+				DDC92B2712618B3D0012DE28 /* apptype.c in Sources */,
+				DDC92B2912618B3D0012DE28 /* getopt_long.c in Sources */,
+				DDC92B2A12618B3D0012DE28 /* readmacho.c in Sources */,
+				DDC92B2B12618B3D0012DE28 /* readcdf.c in Sources */,
+				DDC92B2D12618B3D0012DE28 /* is_tar.c in Sources */,
+				DDC92B2E12618B3D0012DE28 /* vasprintf.c in Sources */,
+				DDC92B2F12618B3D0012DE28 /* funcs.c in Sources */,
+				DDC92B3012618B3D0012DE28 /* fsmagic.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +510,34 @@
 			};
 			name = Release;
 		};
+		DDC92A8512618AE90012DE28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PREBINDING = NO;
+				PRIVATE_HEADERS_FOLDER_PATH = ./;
+				PRODUCT_NAME = "MagicKit-iOS";
+				PUBLIC_HEADERS_FOLDER_PATH = ./;
+				SDKROOT = iphoneos4.1;
+			};
+			name = Debug;
+		};
+		DDC92A8612618AE90012DE28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PREBINDING = NO;
+				PRODUCT_NAME = "MagicKit-iOS";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -432,6 +555,15 @@
 			buildConfigurations = (
 				1DEB91B208733DA50010E9CD /* Debug */,
 				1DEB91B308733DA50010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDC92A8D12618B050012DE28 /* Build configuration list for PBXNativeTarget "MagicKit-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDC92A8512618AE90012DE28 /* Debug */,
+				DDC92A8612618AE90012DE28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

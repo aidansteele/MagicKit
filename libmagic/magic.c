@@ -61,7 +61,7 @@ FILE_RCSID("@(#)$File: magic.c,v 1.62 2009/03/20 21:25:41 christos Exp $")
 
 #include "patchlevel.h"
 
-#ifdef __APPLE__
+#if defined(__APPLE__) && defined(TARGET_OS_MAC)
 #include "get_compat.h"
 #else
 #define COMPAT_MODE(func, mode) 1

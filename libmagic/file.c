@@ -74,7 +74,7 @@ int getopt_long(int argc, char * const *argv, const char *optstring, const struc
 
 #include "patchlevel.h"
 
-#ifdef __APPLE__
+#if defined(__APPLE__) && defined(TARGET_OS_MAC)
 #include "get_compat.h"
 #else
 #define COMPAT_MODE(func, mode) 1
