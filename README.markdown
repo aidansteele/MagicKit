@@ -3,7 +3,7 @@ MagicKit.framework
 
 `MagicKit.framework` is an easy-to-use wrapper around the [`libmagic`](http://www.darwinsys.com/file/) file identification library. It provides a high-level Objective-C interface and deals in Foundation types (NSString, NSData, et al).
 
-`MagicKit.framework` consists of a single class, `MagicKit`. It has six class methods, listed below in descending order of convenience.
+`MagicKit.framework` is available for both OS X (as a framework) or iOS as a static library and header file. `MagicKit.framework` consists of a single class, `MagicKit`. It has six class methods, listed below in descending order of convenience.
 
     + (NSString *)mimeTypeForFileAtPath:(NSString *)path;
     + (NSString *)descriptionForFileAtPath:(NSString *)path;
@@ -17,7 +17,7 @@ MagicKit.framework
 These methods will return either a MIME type, such as:
 
 * `application/xml; charset=us-ascii` 
-* `video/x-msvideo; charset=binary`) 
+* `video/x-msvideo; charset=binary` 
 
 Or a textual description, respectively:
 

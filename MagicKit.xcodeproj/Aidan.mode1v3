@@ -299,7 +299,7 @@
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>387 438 1062 615 0 0 2048 1130 </string>
+						<string>861 242 1062 615 0 0 2048 1130 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -329,7 +329,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>DDC92C751261A63B0012DE28</string>
+										<string>DDC92C761261A7480012DE28</string>
 										<key>history</key>
 										<array>
 											<string>DDC929D01261878B0012DE28</string>
@@ -361,7 +361,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {854, 388}}</string>
 								<key>RubberWindowFrame</key>
-								<string>387 438 1062 615 0 0 2048 1130 </string>
+								<string>861 242 1062 615 0 0 2048 1130 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -381,7 +381,7 @@
 								<key>Frame</key>
 								<string>{{0, 393}, {854, 181}}</string>
 								<key>RubberWindowFrame</key>
-								<string>387 438 1062 615 0 0 2048 1130 </string>
+								<string>861 242 1062 615 0 0 2048 1130 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -551,7 +551,7 @@
 		<string>/Users/Aidan/Development/git/MagicKit/MagicKit.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>387 438 1062 615 0 0 2048 1130 </string>
+	<string>861 242 1062 615 0 0 2048 1130 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
