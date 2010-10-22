@@ -1,4 +1,4 @@
-=== This project is a wrapper around libmagic. It is subject to the BSD licence. Please refer to libmagic/COPYING for further information. ===
+=== This project is a wrapper around libmagic. libmagic is subject to the BSD licence. Please refer to libmagic/COPYING for further information. ===
 
 Copyright (c) 2010 Aidan Steele, Glass Echidna
 
