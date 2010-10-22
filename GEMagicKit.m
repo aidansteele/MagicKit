@@ -50,7 +50,7 @@ const char *magicFilePathForiOS() {
 + (magic_t)sharedMagicCookie {
     static magic_t sharedCookie = NULL;
     
-#if defined(TARGET_OS_MAC)
+#if TARGET_OS_MAC && !(TARGET_OS_IPHONE)
     const char *magicFile = NULL;
 #else
     const char *magicFile = magicFilePathForiOS();
