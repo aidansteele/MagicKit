@@ -3,18 +3,17 @@ MagicKit.framework
 
 `MagicKit.framework` is an easy-to-use wrapper around the [`libmagic`](http://www.darwinsys.com/file/) file identification library. It provides a high-level Objective-C interface and deals in Foundation types (NSString, NSData, et al).
 
-`MagicKit.framework` is available for both OS X (as a framework) or iOS as a static library and header file. `MagicKit.framework` consists of a single class, `MagicKit`. It has six class methods, listed below in descending order of convenience.
+`MagicKit.framework` is available for both OS X (as a framework) or iOS as a static library and header files. `MagicKit.framework` consists of a master class, `GEMagicKit`, and an intermediary class, `GEMagicResult`. The `GEMagicKit` master class has four class methods, listed below in descending order of convenience.
 
-    + (NSString *)mimeTypeForFileAtPath:(NSString *)path;
-    + (NSString *)descriptionForFileAtPath:(NSString *)path;
+    + (GEMagicResult *)magicForFileAtPath:(NSString *)path;
+    + (GEMagicResult *)magicForData:(NSData *)data;
+    
+    + (GEMagicResult *)magicForFileAtPath:(NSString *)path decompress:(BOOL)decompress;
+    + (GEMagicResult *)magicForData:(NSData *)data decompress:(BOOL)decompress;
 
-    + (NSString *)mimeTypeForData:(NSData *)data;
-    + (NSString *)descriptionForData:(NSData *)data;
+These methods all return the `GEMagicResult` intermediary class. The `GEMagicResult` class has four properties. These are `mimeType`, `description`, `uniformType` and `uniformTypeHierarchy`. the first three properties are `NSString` objects, the final returns an `NSArray` object.
 
-    + (NSString *)descriptionForFileAtPath:(NSString *)path decompress:(BOOL)decompress mimeType:(BOOL)mimeType;
-    + (NSString *)descriptionForData:(NSData *)data decompress:(BOOL)decompress mimeType:(BOOL)mimeType;
-
-These methods will return either a MIME type, such as:
+Example MIME types include:
 
 * `application/xml; charset=us-ascii` 
 * `video/x-msvideo; charset=binary` 
@@ -24,6 +23,8 @@ Or a textual description, respectively:
 * `XML  document text` 
 * `RIFF (little-endian) data, AVI, 624 x 352, 23.98 fps, video: XviD, audio: MPEG-1 Layer 3 (stereo, 48000 Hz)`)
 
-`MagicKit` can also decompress compressed files and hence attempt to determine the contents within.
+Finally, `uniformType` and `uniformTypeHierarchy` return [Uniform Type Identifiers](http://en.wikipedia.org/wiki/Uniform_Type_Identifier) for the relevant file/data. The type hierarchy is an array of types that the given file conforms to.
+
+`GEMagicKit` can also decompress compressed files and hence attempt to determine the contents within.
 
 `MagicKit.framework` is [MIT](http://www.opensource.org/licenses/mit-license.html)-licensed. `libmagic` is [BSD](http://www.opensource.org/licenses/bsd-license.php)-licensed. 
