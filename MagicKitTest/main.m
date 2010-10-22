@@ -15,11 +15,11 @@ int main (int argc, const char * argv[]) {
     
     if (argc > 1) {
         NSString *filePath = [NSString stringWithUTF8String:argv[1]];
+        GEMagicResult *result = [GEMagicKit magicForFileAtPath:filePath];
         
-        NSString *mimeType = [MagicKit mimeTypeForFileAtPath:filePath];
-        NSString *description = [MagicKit descriptionForFileAtPath:filePath];
-        
-        NSLog(@"MIME Type: %@\nDescription: %@", mimeType, description);
+        NSLog(@"MIME Type: %@", result.mimeType);
+        NSLog(@"Description %@", result.description);
+        NSLog(@"UTIs: %@", result.uniformTypeHierarchy);
     } else {
         NSLog(@"Supply a path to the file whose type you wish to determine.");
     }
