@@ -43,6 +43,14 @@
     return self;
 }
 
+- (void)dealloc;
+{
+    [mimeType release];
+    [description release];
+    [uniformTypeHierarchy release];
+    [super dealloc];
+}
+
 - (NSString *)uniformType {
     return [self.uniformTypeHierarchy objectAtIndex:0];
 }
