@@ -34,7 +34,7 @@
 #endif
 
 const char *magicFilePathForiOS() {
-    return [[[NSBundle mainBundle] pathForResource:@"magic" ofType:@"mgc"] UTF8String];
+    return [[[NSBundle mainBundle] pathForResource:@"magic" ofType:@"mgc"] fileSystemRepresentation];
 }
 
 @interface GEMagicKit ()
