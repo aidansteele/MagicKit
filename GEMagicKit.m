@@ -102,7 +102,7 @@ const char *magicFilePathForiOS() {
     
     NSString *plainMimeType = [[mimeType componentsSeparatedByString:@";"] objectAtIndex:0];
     NSString *typeIdentifier = [(id)CFMakeCollectable(UTTypeCreatePreferredIdentifierForTag(kUTTagClassMIMEType, (CFStringRef)plainMimeType, NULL)) autorelease];
-    NSArray *typeHierarchy = [GEMagicKit typeHierarchyForType:typeIdentifier];
+    NSArray *typeHierarchy = [[NSArray arrayWithObject:typeIdentifier] arrayByAddingObjectsFromArray:[GEMagicKit typeHierarchyForType:typeIdentifier]];
     
     GEMagicResult *result = [[GEMagicResult alloc] initWithMimeType:mimeType 
                                                         description:description 
