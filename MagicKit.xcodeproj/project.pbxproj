@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F4F51871551FFD300248063 /* GEMagicResult.m in Sources */ = {isa = PBXBuildFile; fileRef = DD610A1E1271094B003CF804 /* GEMagicResult.m */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		DD2BBE3D1262DBD3001B55D4 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2BBE3C1262DBD3001B55D4 /* CoreServices.framework */; };
 		DD2BBF121262DCCE001B55D4 /* MagicKit.framework in Install in Root */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* MagicKit.framework */; };
@@ -531,6 +532,7 @@
 				DDC92B2F12618B3D0012DE28 /* funcs.c in Sources */,
 				DDC92B3012618B3D0012DE28 /* fsmagic.c in Sources */,
 				DDC92B7012618E120012DE28 /* GEMagicKit.m in Sources */,
+				5F4F51871551FFD300248063 /* GEMagicResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,7 +643,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = ./;
 				PRODUCT_NAME = "MagicKit-iOS";
 				PUBLIC_HEADERS_FOLDER_PATH = ./;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -656,7 +658,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PREBINDING = NO;
 				PRODUCT_NAME = "MagicKit-iOS";
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				ZERO_LINK = NO;
 			};
