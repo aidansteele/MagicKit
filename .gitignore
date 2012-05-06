@@ -1,3 +1,7 @@
 build/
 *.pbxuser
 *.mode1v3
+MagicKit.xcodeproj/xcuserdata/mz2.xcuserdatad/xcschemes/MagicKit-iOS.xcscheme
+MagicKit.xcodeproj/xcuserdata/mz2.xcuserdatad/xcschemes/MagicKit.xcscheme
+MagicKit.xcodeproj/xcuserdata/mz2.xcuserdatad/xcschemes/MagicKitTest.xcscheme
+MagicKit.xcodeproj/xcuserdata/mz2.xcuserdatad/xcschemes/xcschememanagement.plist
