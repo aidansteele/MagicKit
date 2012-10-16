@@ -124,9 +124,12 @@ const char *magicFilePathForiOS() {
             NSArray *superTypeHierarchy = [GEMagicKit typeHierarchyForType:superType];
             [typeHierarchy addObjectsFromArray:superTypeHierarchy];
         }
-    } else {
-        typeHierarchy = [NSArray arrayWithObject:superTypes]; // superTypes is actually a string
+    } else if ([superTypes isKindOfClass:[NSString class]]) {
+        typeHierarchy = [NSArray arrayWithObject:superTypes];
     }
+	else {
+		typeHierarchy = nil;
+	}
     
     return typeHierarchy;
 }
