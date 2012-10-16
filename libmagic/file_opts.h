@@ -16,27 +16,24 @@ OPT_LONGONLY("help", 0, "                 display this help and exit\n")
 OPT('v', "version", 0, "              output version information and exit\n")
 OPT('m', "magic-file", 1, " LIST      use LIST as a colon-separated list of magic\n"
     "                               number files\n")
-OPT_UNIX03('M', " LIST                    use LIST as a colon-separated list of magic\n"
-    "                               number files in place of default\n")
 OPT('z', "uncompress", 0, "           try to look inside compressed files\n")
 OPT('b', "brief", 0, "                do not prepend filenames to output lines\n")
 OPT('c', "checking-printout", 0, "    print the parsed form of the magic file, use in\n"
     "                               conjunction with -m to debug a new magic file\n"
     "                               before installing it\n")
-OPT_UNIX03('d', "                         use default magic file\n") 
 OPT('e', "exclude", 1, " TEST         exclude TEST from the list of test to be\n"
     "                               performed for file. Valid tests are:\n"
     "                               ascii, apptype, compress, elf, soft, tar, tokens, troff\n")
 OPT('f', "files-from", 1, " FILE      read the filenames to be examined from FILE\n")
 OPT('F', "separator", 1, " STRING     use string as separator instead of `:'\n")
-OPT_UNIX03('i', "                         do not further classify regular files\n")
-OPT('I', "mime", 0, "                 output MIME type strings (--mime-type and\n"
+OPT('i', "mime", 0, "                 output MIME type strings (--mime-type and\n"
     "                               --mime-encoding)\n")
 OPT_LONGONLY("apple", 0, "                output the Apple CREATOR/TYPE\n")
 OPT_LONGONLY("mime-type", 0, "            output the MIME type\n")
 OPT_LONGONLY("mime-encoding", 0, "        output the MIME encoding\n")
 OPT('k', "keep-going", 0, "           don't stop at the first match\n")
 #ifdef S_IFLNK
+OPT('l', "list", 0, "                 list magic strength\n")
 OPT('L', "dereference", 0, "          follow symlinks (default)\n")
 OPT('h', "no-dereference", 0, "       don't follow symlinks\n")
 #endif
@@ -50,5 +47,4 @@ OPT('r', "raw", 0, "                  don't translate unprintable chars to \\ooo
 OPT('s', "special-files", 0, "        treat special (block/char devices) files as\n"
     "                             ordinary ones\n")
 OPT('C', "compile", 0, "              compile file specified by -m\n")
-/* 'D' is always debug, 'd' is frequently something else */
-OPT('D', "debug", 0, "                print debugging messages\n")
+OPT('d', "debug", 0, "                print debugging messages\n")

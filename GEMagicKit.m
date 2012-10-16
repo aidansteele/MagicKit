@@ -33,10 +33,6 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #endif
 
-const char *magicFilePathForiOS() {
-    return [[[NSBundle mainBundle] pathForResource:@"magic" ofType:@"mgc"] fileSystemRepresentation];
-}
-
 @interface GEMagicKit ()
 
 + (magic_t)sharedMagicCookie;
@@ -50,10 +46,11 @@ const char *magicFilePathForiOS() {
 + (magic_t)sharedMagicCookie {
     static magic_t sharedCookie = NULL;
     
+    const char *magicFile;
 #if TARGET_OS_MAC && !(TARGET_OS_IPHONE)
-    const char *magicFile = NULL;
+    magicFile = [[[NSBundle bundleForClass:[self class]] pathForResource:@"magic" ofType:@"mgc"] UTF8String];
 #else
-    const char *magicFile = magicFilePathForiOS();
+    magicFile = [[[NSBundle mainBundle] pathForResource:@"magic" ofType:@"mgc"] UTF8String];
 #endif
     
     if (sharedCookie == NULL) {

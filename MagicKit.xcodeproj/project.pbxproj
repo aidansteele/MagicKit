@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3DCAEFDD162D893A0036D9BF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC92A8912618B050012DE28 /* libz.dylib */; };
 		3DCAEFE6162D8BDE0036D9BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCAEFE5162D8BDE0036D9BF /* Foundation.framework */; };
+		3DCAF01C162D9C520036D9BF /* magic.mgc in Resources */ = {isa = PBXBuildFile; fileRef = 3DCAF01B162D9C520036D9BF /* magic.mgc */; };
 		5F4F51871551FFD300248063 /* GEMagicResult.m in Sources */ = {isa = PBXBuildFile; fileRef = DD610A1E1271094B003CF804 /* GEMagicResult.m */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		DD2BBE3D1262DBD3001B55D4 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2BBE3C1262DBD3001B55D4 /* CoreServices.framework */; };
@@ -37,13 +38,10 @@
 		DDC929AB126187080012DE28 /* magic.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92989126187080012DE28 /* magic.c */; };
 		DDC929AC126187080012DE28 /* magic.h in Headers */ = {isa = PBXBuildFile; fileRef = DDC9298A126187080012DE28 /* magic.h */; };
 		DDC929AF126187080012DE28 /* mygetopt.h in Headers */ = {isa = PBXBuildFile; fileRef = DDC9298D126187080012DE28 /* mygetopt.h */; };
-		DDC929B0126187080012DE28 /* names.h in Headers */ = {isa = PBXBuildFile; fileRef = DDC9298E126187080012DE28 /* names.h */; };
-		DDC929B1126187080012DE28 /* patchlevel.h in Headers */ = {isa = PBXBuildFile; fileRef = DDC9298F126187080012DE28 /* patchlevel.h */; };
 		DDC929B2126187080012DE28 /* print.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92990126187080012DE28 /* print.c */; };
 		DDC929B3126187080012DE28 /* readcdf.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92991126187080012DE28 /* readcdf.c */; };
 		DDC929B4126187080012DE28 /* readelf.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92992126187080012DE28 /* readelf.c */; };
 		DDC929B5126187080012DE28 /* readelf.h in Headers */ = {isa = PBXBuildFile; fileRef = DDC92993126187080012DE28 /* readelf.h */; };
-		DDC929B6126187080012DE28 /* readmacho.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92994126187080012DE28 /* readmacho.c */; };
 		DDC929B7126187080012DE28 /* softmagic.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92995126187080012DE28 /* softmagic.c */; };
 		DDC929B8126187080012DE28 /* strlcat.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92996126187080012DE28 /* strlcat.c */; };
 		DDC929B9126187080012DE28 /* strlcpy.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92997126187080012DE28 /* strlcpy.c */; };
@@ -70,7 +68,6 @@
 		DDC92B2612618B3D0012DE28 /* apprentice.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92978126187080012DE28 /* apprentice.c */; };
 		DDC92B2712618B3D0012DE28 /* apptype.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92979126187080012DE28 /* apptype.c */; };
 		DDC92B2912618B3D0012DE28 /* getopt_long.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92987126187080012DE28 /* getopt_long.c */; };
-		DDC92B2A12618B3D0012DE28 /* readmacho.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92994126187080012DE28 /* readmacho.c */; };
 		DDC92B2B12618B3D0012DE28 /* readcdf.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92991126187080012DE28 /* readcdf.c */; };
 		DDC92B2D12618B3D0012DE28 /* is_tar.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92988126187080012DE28 /* is_tar.c */; };
 		DDC92B2E12618B3D0012DE28 /* vasprintf.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC92999126187080012DE28 /* vasprintf.c */; };
@@ -101,6 +98,7 @@
 		32DBCF5E0370ADEE00C91783 /* MagicKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicKit_Prefix.pch; sourceTree = "<group>"; };
 		3DCAEFE5162D8BDE0036D9BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3DCAEFF4162D8C950036D9BF /* MagicKitTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MagicKitTest-Prefix.pch"; path = "MagicKitTest/MagicKitTest-Prefix.pch"; sourceTree = "<group>"; };
+		3DCAF01B162D9C520036D9BF /* magic.mgc */ = {isa = PBXFileReference; lastKnownFileType = file; path = magic.mgc; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* MagicKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MagicKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2BBE3C1262DBD3001B55D4 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
@@ -129,13 +127,10 @@
 		DDC92989126187080012DE28 /* magic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = magic.c; path = libmagic/magic.c; sourceTree = SOURCE_ROOT; };
 		DDC9298A126187080012DE28 /* magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = magic.h; path = libmagic/magic.h; sourceTree = SOURCE_ROOT; };
 		DDC9298D126187080012DE28 /* mygetopt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mygetopt.h; path = libmagic/mygetopt.h; sourceTree = SOURCE_ROOT; };
-		DDC9298E126187080012DE28 /* names.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = names.h; path = libmagic/names.h; sourceTree = SOURCE_ROOT; };
-		DDC9298F126187080012DE28 /* patchlevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = patchlevel.h; path = libmagic/patchlevel.h; sourceTree = SOURCE_ROOT; };
 		DDC92990126187080012DE28 /* print.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = print.c; path = libmagic/print.c; sourceTree = SOURCE_ROOT; };
 		DDC92991126187080012DE28 /* readcdf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = readcdf.c; path = libmagic/readcdf.c; sourceTree = SOURCE_ROOT; };
 		DDC92992126187080012DE28 /* readelf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = readelf.c; path = libmagic/readelf.c; sourceTree = SOURCE_ROOT; };
 		DDC92993126187080012DE28 /* readelf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = readelf.h; path = libmagic/readelf.h; sourceTree = SOURCE_ROOT; };
-		DDC92994126187080012DE28 /* readmacho.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = readmacho.c; path = libmagic/readmacho.c; sourceTree = SOURCE_ROOT; };
 		DDC92995126187080012DE28 /* softmagic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = softmagic.c; path = libmagic/softmagic.c; sourceTree = SOURCE_ROOT; };
 		DDC92996126187080012DE28 /* strlcat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = strlcat.c; path = libmagic/strlcat.c; sourceTree = SOURCE_ROOT; };
 		DDC92997126187080012DE28 /* strlcpy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = strlcpy.c; path = libmagic/strlcpy.c; sourceTree = SOURCE_ROOT; };
@@ -282,6 +277,7 @@
 		DDC92977126186FD0012DE28 /* libmagic */ = {
 			isa = PBXGroup;
 			children = (
+				3DCAF01B162D9C520036D9BF /* magic.mgc */,
 				DDC929BC1261872F0012DE28 /* config.h */,
 				DDC92978126187080012DE28 /* apprentice.c */,
 				DDC92979126187080012DE28 /* apptype.c */,
@@ -303,13 +299,10 @@
 				DDC92989126187080012DE28 /* magic.c */,
 				DDC9298A126187080012DE28 /* magic.h */,
 				DDC9298D126187080012DE28 /* mygetopt.h */,
-				DDC9298E126187080012DE28 /* names.h */,
-				DDC9298F126187080012DE28 /* patchlevel.h */,
 				DDC92990126187080012DE28 /* print.c */,
 				DDC92991126187080012DE28 /* readcdf.c */,
 				DDC92992126187080012DE28 /* readelf.c */,
 				DDC92993126187080012DE28 /* readelf.h */,
-				DDC92994126187080012DE28 /* readmacho.c */,
 				DDC92995126187080012DE28 /* softmagic.c */,
 				DDC92996126187080012DE28 /* strlcat.c */,
 				DDC92997126187080012DE28 /* strlcpy.c */,
@@ -352,8 +345,6 @@
 				DDC929A6126187080012DE28 /* file.h in Headers */,
 				DDC929AC126187080012DE28 /* magic.h in Headers */,
 				DDC929AF126187080012DE28 /* mygetopt.h in Headers */,
-				DDC929B0126187080012DE28 /* names.h in Headers */,
-				DDC929B1126187080012DE28 /* patchlevel.h in Headers */,
 				DDC929B5126187080012DE28 /* readelf.h in Headers */,
 				DDC929BA126187080012DE28 /* tar.h in Headers */,
 				DDC929BD1261872F0012DE28 /* config.h in Headers */,
@@ -466,6 +457,7 @@
 			files = (
 				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
 				DDC92C5E1261A07F0012DE28 /* LICENCE in Resources */,
+				3DCAF01C162D9C520036D9BF /* magic.mgc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,7 +492,6 @@
 				DDC929B2126187080012DE28 /* print.c in Sources */,
 				DDC929B3126187080012DE28 /* readcdf.c in Sources */,
 				DDC929B4126187080012DE28 /* readelf.c in Sources */,
-				DDC929B6126187080012DE28 /* readmacho.c in Sources */,
 				DDC929B7126187080012DE28 /* softmagic.c in Sources */,
 				DDC929B8126187080012DE28 /* strlcat.c in Sources */,
 				DDC929B9126187080012DE28 /* strlcpy.c in Sources */,
@@ -530,7 +521,6 @@
 				DDC92B2612618B3D0012DE28 /* apprentice.c in Sources */,
 				DDC92B2712618B3D0012DE28 /* apptype.c in Sources */,
 				DDC92B2912618B3D0012DE28 /* getopt_long.c in Sources */,
-				DDC92B2A12618B3D0012DE28 /* readmacho.c in Sources */,
 				DDC92B2B12618B3D0012DE28 /* readcdf.c in Sources */,
 				DDC92B2D12618B3D0012DE28 /* is_tar.c in Sources */,
 				DDC92B2E12618B3D0012DE28 /* vasprintf.c in Sources */,
@@ -574,6 +564,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MagicKit_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "HAVE_CONFIG_H=1";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@rpath";
 				PRODUCT_NAME = MagicKit;
@@ -591,6 +582,7 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MagicKit_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "HAVE_CONFIG_H=1";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@rpath";
 				PRODUCT_NAME = MagicKit;
@@ -669,14 +661,13 @@
 		DDC92A8512618AE90012DE28 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = armv7;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				PRIVATE_HEADERS_FOLDER_PATH = ./;
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "HAVE_CONFIG_H=1";
 				PRODUCT_NAME = "MagicKit-iOS";
-				PUBLIC_HEADERS_FOLDER_PATH = ./;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -685,10 +676,11 @@
 		DDC92A8612618AE90012DE28 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = armv7;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "HAVE_CONFIG_H=1";
 				PRODUCT_NAME = "MagicKit-iOS";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

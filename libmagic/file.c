@@ -32,7 +32,7 @@
 #include "file.h"
 
 #ifndef	lint
-FILE_RCSID("@(#)$File: file.c,v 1.131 2009/02/13 18:48:05 christos Exp $")
+FILE_RCSID("@(#)$File: file.c,v 1.145 2011/12/08 12:12:46 rrt Exp $")
 #endif	/* lint */
 
 #include "magic.h"
@@ -63,35 +63,26 @@ FILE_RCSID("@(#)$File: file.c,v 1.131 2009/02/13 18:48:05 christos Exp $")
 
 #if defined(HAVE_GETOPT_H) && defined(HAVE_STRUCT_OPTION)
 #include <getopt.h>
-#else
-#include "mygetopt.h"
-#endif
 #ifndef HAVE_GETOPT_LONG
 int getopt_long(int argc, char * const *argv, const char *optstring, const struct option *longopts, int *longindex);
 #endif
-
-#include <netinet/in.h>		/* for byte swapping */
-
-#include "patchlevel.h"
-
-#if defined(__APPLE__) && defined(TARGET_OS_MAC)
-#include "get_compat.h"
 #else
-#define COMPAT_MODE(func, mode) 1
+#include "mygetopt.h"
 #endif
 
 #ifdef S_IFLNK
-#define SYMLINKFLAG "Lh"
+#define FILE_FLAGS "-bchikLlNnprsvz0"
 #else
-#define SYMLINKFLAG ""
+#define FILE_FLAGS "-bciklNnprsvz0"
 #endif
 
-# define USAGE   "Usage: %s [-bcdik" SYMLINKFLAG "nNrsvz0] [-e test] [-f namefile] [-F separator] [-m magicfiles] file...\n       %s -C -m magicfiles\n"
-# define USAGE03 "Usage: %s [-bcdDiIk" SYMLINKFLAG "nNrsvz0] [-e test] [-f namefile] [-F separator] [-m magicfiles] [-M magicfiles] file...\n       %s -C -m magicfiles\n"
-
-#ifndef MAXPATHLEN
-#define	MAXPATHLEN	1024
-#endif
+# define USAGE  \
+    "Usage: %s [" FILE_FLAGS \
+	"] [--apple] [--mime-encoding] [--mime-type]\n" \
+    "            [-e testname] [-F separator] [-f namefile] [-m magicfiles] " \
+    "file ...\n" \
+    "       %s -C [-m magicfiles]\n" \
+    "       %s [--help]\n"
 
 private int 		/* Global command-line options 		*/
 	bflag = 0,	/* brief output format	 		*/
@@ -99,22 +90,18 @@ private int 		/* Global command-line options 		*/
 	nobuffer = 0,   /* Do not buffer stdout 		*/
 	nulsep = 0;	/* Append '\0' to the separator		*/
 
-private const char *default_magicfile = MAGIC;
 private const char *separator = ":";	/* Default field separator	*/
 private const struct option long_options[] = {
 #define OPT(shortname, longname, opt, doc)      \
     {longname, opt, NULL, shortname},
 #define OPT_LONGONLY(longname, opt, doc)        \
     {longname, opt, NULL, 0},
-#define OPT_UNIX03(shortname, doc)
 #include "file_opts.h"
 #undef OPT
 #undef OPT_LONGONLY
-#undef OPT_UNIX03
     {0, 0, NULL, 0}
 };
-#define OPTSTRING	"bcCde:f:F:hikLm:nNprsvz0"
-#define OPTSTRING03	"bcCdDe:f:F:hiIkLm:M:nNprsvz0"
+#define OPTSTRING	"bcCde:f:F:hiklLm:nNprsvz0"
 
 private const struct {
 	const char *name;
@@ -128,7 +115,8 @@ private const struct {
 	{ "encoding",	MAGIC_NO_CHECK_ENCODING },
 	{ "soft",	MAGIC_NO_CHECK_SOFT },
 	{ "tar",	MAGIC_NO_CHECK_TAR },
-	{ "tokens",	MAGIC_NO_CHECK_TOKENS },
+	{ "text",	MAGIC_NO_CHECK_TEXT },	/* synonym for ascii */
+	{ "tokens",	MAGIC_NO_CHECK_TOKENS }, /* OBSOLETE: ignored for backwards compatibility */
 };
 
 private char *progname;		/* used throughout 		*/
@@ -152,14 +140,9 @@ main(int argc, char *argv[])
 	size_t i;
 	int action = 0, didsomefiles = 0, errflg = 0;
 	int flags = 0, e = 0;
-	char *usermagic;
 	struct magic_set *magic = NULL;
-	char magicpath[2 * MAXPATHLEN + 2];
 	int longindex;
-	int dflag = 0; /* POSIX 'd' option -- use default magic file */
-	int Mflag = 0;
-	int unix03 = COMPAT_MODE("bin/file", "unix2003");
-	const char *magicfile;		/* where the magic is	*/
+	const char *magicfile = NULL;		/* where the magic is	*/
 
 	/* makes islower etc work for other langs */
 	(void)setlocale(LC_CTYPE, "");
@@ -174,15 +157,10 @@ main(int argc, char *argv[])
 	else
 		progname = argv[0];
 
-	magicfile = default_magicfile;
-	if ((usermagic = getenv("MAGIC")) != NULL)
-		magicfile = usermagic;
-
 #ifdef S_IFLNK
-	flags |= (unix03 || getenv("POSIXLY_CORRECT")) ? (MAGIC_SYMLINK) : 0;
+	flags |= getenv("POSIXLY_CORRECT") ? MAGIC_SYMLINK : 0;
 #endif
-	if (unix03) flags |= MAGIC_RAW; /* See 5747343. */
-	while ((c = getopt_long(argc, argv, unix03 ? OPTSTRING03 : OPTSTRING, long_options,
+	while ((c = getopt_long(argc, argv, OPTSTRING, long_options,
 	    &longindex)) != -1)
 		switch (c) {
 		case 0 :
@@ -214,11 +192,6 @@ main(int argc, char *argv[])
 			action = FILE_COMPILE;
 			break;
 		case 'd':
-			if (unix03) {
-				++dflag;
-				break;
-			}
-		case 'D':
 			flags |= MAGIC_DEBUG|MAGIC_CHECK;
 			break;
 		case 'e':
@@ -245,27 +218,15 @@ main(int argc, char *argv[])
 			separator = optarg;
 			break;
 		case 'i':
-			if (unix03) {
-				flags |= MAGIC_REGULAR;
-				break;
-			}
-		case 'I':
 			flags |= MAGIC_MIME;
 			break;
 		case 'k':
 			flags |= MAGIC_CONTINUE;
 			break;
-		case 'M':
-			++Mflag;
+		case 'l':
+			action = FILE_LIST;
+			break;
 		case 'm':
-			if (magicfile != default_magicfile && magicfile != usermagic) {
-				char *newmagicfile = malloc(strlen(magicfile) + strlen(separator) + strlen(optarg) + 1);
-				strcpy(newmagicfile, magicfile);
-				strcat(newmagicfile, separator);
-				strcat(newmagicfile, optarg);
-				magicfile = newmagicfile;
-				break;
-			}
 			magicfile = optarg;
 			break;
 		case 'n':
@@ -286,9 +247,10 @@ main(int argc, char *argv[])
 			flags |= MAGIC_DEVICES;
 			break;
 		case 'v':
-			(void)fprintf(stderr, "%s-%d.%.2d\n", progname,
-				       FILE_VERSION_MAJOR, patchlevel);
-			(void)fprintf(stderr, "magic file from %s\n",
+			if (magicfile == NULL)
+				magicfile = magic_getpath(magicfile, action);
+			(void)fprintf(stdout, "%s-%s\n", progname, VERSION);
+			(void)fprintf(stdout, "magic file from %s\n",
 				       magicfile);
 			return 1;
 		case 'z':
@@ -314,27 +276,33 @@ main(int argc, char *argv[])
 	if (e)
 		return e;
 
-	if (Mflag && !dflag) {
-		flags |= MAGIC_NO_CHECK_ASCII;
-	}
-
 	switch(action) {
 	case FILE_CHECK:
 	case FILE_COMPILE:
+	case FILE_LIST:
 		/*
 		 * Don't try to check/compile ~/.magic unless we explicitly
 		 * ask for it.
 		 */
-		if (magicfile == magicpath)
-			magicfile = default_magicfile;
 		magic = magic_open(flags|MAGIC_CHECK);
 		if (magic == NULL) {
 			(void)fprintf(stderr, "%s: %s\n", progname,
 			    strerror(errno));
 			return 1;
 		}
-		c = action == FILE_CHECK ? magic_check(magic, magicfile) :
-		    magic_compile(magic, magicfile);
+		switch(action) {
+		case FILE_CHECK:
+			c = magic_check(magic, magicfile);
+			break;
+		case FILE_COMPILE:
+			c = magic_compile(magic, magicfile);
+			break;
+		case FILE_LIST:
+			c = magic_list(magic, magicfile);
+			break;
+		default:
+			abort();
+		}
 		if (c == -1) {
 			(void)fprintf(stderr, "%s: %s\n", progname,
 			    magic_error(magic));
@@ -400,8 +368,10 @@ load(const char *magicfile, int flags)
 private int
 unwrap(struct magic_set *ms, const char *fn)
 {
-	char buf[MAXPATHLEN];
 	FILE *f;
+	ssize_t len;
+	char *line = NULL;
+	size_t llen = 0;
 	int wid = 0, cwid;
 	int e = 0;
 
@@ -415,9 +385,10 @@ unwrap(struct magic_set *ms, const char *fn)
 			return 1;
 		}
 
-		while (fgets(buf, sizeof(buf), f) != NULL) {
-			buf[strcspn(buf, "\n")] = '\0';
-			cwid = file_mbswidth(buf);
+		while ((len = getline(&line, &llen, f)) > 0) {
+			if (line[len - 1] == '\n')
+				line[len - 1] = '\0';
+			cwid = file_mbswidth(line);
 			if (cwid > wid)
 				wid = cwid;
 		}
@@ -425,13 +396,15 @@ unwrap(struct magic_set *ms, const char *fn)
 		rewind(f);
 	}
 
-	while (fgets(buf, sizeof(buf), f) != NULL) {
-		buf[strcspn(buf, "\n")] = '\0';
-		e |= process(ms, buf, wid);
+	while ((len = getline(&line, &llen, f)) > 0) {
+		if (line[len - 1] == '\n')
+			line[len - 1] = '\0';
+		e |= process(ms, line, wid);
 		if(nobuffer)
 			(void)fflush(stdout);
 	}
 
+	free(line);
 	(void)fclose(f);
 	return e;
 }
@@ -449,8 +422,7 @@ process(struct magic_set *ms, const char *inname, int wid)
 		(void)printf("%s", std_in ? "/dev/stdin" : inname);
 		if (nulsep)
 			(void)putc('\0', stdout);
-		else
-			(void)printf("%s", separator);
+		(void)printf("%s", separator);
 		(void)printf("%*s ",
 		    (int) (nopad ? 0 : (wid - file_mbswidth(inname))), "");
 	}
@@ -502,28 +474,24 @@ file_mbswidth(const char *s)
 private void
 usage(void)
 {
-	(void)fprintf(stderr, COMPAT_MODE("bin/file", "unix2003") ? USAGE03 : USAGE, progname, progname);
-	(void)fputs("Try `file --help' for more information.\n", stderr);
+	(void)fprintf(stderr, USAGE, progname, progname, progname);
 	exit(1);
 }
 
 private void
 help(void)
 {
-	int unix03 = COMPAT_MODE("bin/file", "unix2003");
 	(void)fputs(
 "Usage: file [OPTION...] [FILE...]\n"
 "Determine type of FILEs.\n"
-"\n", stderr);
+"\n", stdout);
 #define OPT(shortname, longname, opt, doc)      \
-	fprintf(stderr, "  -%c, --" longname doc, unix03 || (shortname != 'D' && shortname != 'I') ? shortname : shortname + 32);
+	fprintf(stdout, "  -%c, --" longname doc, shortname);
 #define OPT_LONGONLY(longname, opt, doc)        \
-	fprintf(stderr, "      --" longname doc);
-#define OPT_UNIX03(shortname, doc)              \
-	if (unix03) fprintf(stderr, "  -%c" doc, shortname);
+	fprintf(stdout, "      --" longname doc);
 #include "file_opts.h"
 #undef OPT
 #undef OPT_LONGONLY
-#undef OPT_UNIX03
+	fprintf(stdout, "\nReport bugs to http://bugs.gw.com/\n");
 	exit(0);
 }
