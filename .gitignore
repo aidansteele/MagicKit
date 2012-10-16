@@ -1,8 +1,18 @@
-build/
+# Xcode
+build/*
 *.pbxuser
+!default.pbxuser
 *.mode1v3
-MagicKit.xcodeproj/xcuserdata/mz2.xcuserdatad/xcschemes/MagicKit-iOS.xcscheme
-MagicKit.xcodeproj/xcuserdata/mz2.xcuserdatad/xcschemes/MagicKit.xcscheme
-MagicKit.xcodeproj/xcuserdata/mz2.xcuserdatad/xcschemes/MagicKitTest.xcscheme
-MagicKit.xcodeproj/xcuserdata/mz2.xcuserdatad/xcschemes/xcschememanagement.plist
-MagicKit.xcodeproj/project.xcworkspace/xcuserdata/mz2.xcuserdatad/UserInterfaceState.xcuserstate
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xcworkspace
+!default.xcworkspace
+xcuserdata
+profile
+*.moved-aside
+
+## Ignore incredibly annoying .DS_Store files
+.DS_Store
