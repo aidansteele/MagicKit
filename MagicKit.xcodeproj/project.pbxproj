@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3DCAEFDD162D893A0036D9BF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC92A8912618B050012DE28 /* libz.dylib */; };
+		3DCAEFE6162D8BDE0036D9BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCAEFE5162D8BDE0036D9BF /* Foundation.framework */; };
 		5F4F51871551FFD300248063 /* GEMagicResult.m in Sources */ = {isa = PBXBuildFile; fileRef = DD610A1E1271094B003CF804 /* GEMagicResult.m */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		DD2BBE3D1262DBD3001B55D4 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2BBE3C1262DBD3001B55D4 /* CoreServices.framework */; };
-		DD6109D61271075E003CF804 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2BBE3C1262DBD3001B55D4 /* CoreServices.framework */; };
 		DD610A1F1271094B003CF804 /* GEMagicResult.h in Headers */ = {isa = PBXBuildFile; fileRef = DD610A1D1271094B003CF804 /* GEMagicResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD610A201271094B003CF804 /* GEMagicResult.m in Sources */ = {isa = PBXBuildFile; fileRef = DD610A1E1271094B003CF804 /* GEMagicResult.m */; };
 		DD610A2712710A45003CF804 /* MagicKitPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = DD610A2612710A45003CF804 /* MagicKitPrivate.h */; };
@@ -79,7 +79,6 @@
 		DDC92B4B12618BEE0012DE28 /* GEMagicKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DDC929DE126187DA0012DE28 /* GEMagicKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DDC92B6F12618E120012DE28 /* GEMagicKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC92B6E12618E120012DE28 /* GEMagicKit.m */; };
 		DDC92B7012618E120012DE28 /* GEMagicKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC92B6E12618E120012DE28 /* GEMagicKit.m */; };
-		DDC92C1012619C490012DE28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC92A8712618B050012DE28 /* Foundation.framework */; };
 		DDC92C4212619DB10012DE28 /* MagicKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* MagicKit.framework */; };
 		DDC92C5A12619EBC0012DE28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC92C5912619EBC0012DE28 /* main.m */; };
 		DDC92C5E1261A07F0012DE28 /* LICENCE in Resources */ = {isa = PBXBuildFile; fileRef = DDC92C5D1261A07F0012DE28 /* LICENCE */; };
@@ -100,6 +99,8 @@
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCF5E0370ADEE00C91783 /* MagicKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicKit_Prefix.pch; sourceTree = "<group>"; };
+		3DCAEFE5162D8BDE0036D9BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3DCAEFF4162D8C950036D9BF /* MagicKitTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MagicKitTest-Prefix.pch"; path = "MagicKitTest/MagicKitTest-Prefix.pch"; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* MagicKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MagicKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2BBE3C1262DBD3001B55D4 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
@@ -154,6 +155,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3DCAEFDF162D8BDE0036D9BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDC92C4212619DB10012DE28 /* MagicKit.framework in Frameworks */,
+				3DCAEFE6162D8BDE0036D9BF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF560486A6940098B216 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -171,16 +181,6 @@
 				DDC92A8812618B050012DE28 /* Foundation.framework in Frameworks */,
 				DDC92A8A12618B050012DE28 /* libz.dylib in Frameworks */,
 				DD610A4512710B7B003CF804 /* MobileCoreServices.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DDC92C0312619C1E0012DE28 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DDC92C1012619C490012DE28 /* Foundation.framework in Frameworks */,
-				DDC92C4212619DB10012DE28 /* MagicKit.framework in Frameworks */,
-				DD6109D61271075E003CF804 /* CoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +204,7 @@
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				089C1665FE841158C02AAC07 /* Resources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				3DCAEFE4162D8BDE0036D9BF /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
 			name = MagicKit;
@@ -270,6 +271,14 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
+		3DCAEFE4162D8BDE0036D9BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAEFE5162D8BDE0036D9BF /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DDC92977126186FD0012DE28 /* libmagic */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +333,7 @@
 		DDC92C1912619C6A0012DE28 /* MagicKit Test */ = {
 			isa = PBXGroup;
 			children = (
+				3DCAEFF4162D8C950036D9BF /* MagicKitTest-Prefix.pch */,
 				DDC92C5912619EBC0012DE28 /* main.m */,
 			);
 			name = "MagicKit Test";
@@ -366,6 +376,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		3DCAEFE1162D8BDE0036D9BF /* MagicKitTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DCAEFEE162D8BDE0036D9BF /* Build configuration list for PBXNativeTarget "MagicKitTest" */;
+			buildPhases = (
+				3DCAEFDE162D8BDE0036D9BF /* Sources */,
+				3DCAEFDF162D8BDE0036D9BF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3DCAEFF2162D8BF60036D9BF /* PBXTargetDependency */,
+			);
+			name = MagicKitTest;
+			productName = MagicKitTest;
+			productReference = DDC92C0512619C1E0012DE28 /* MagicKitTest */;
+			productType = "com.apple.product-type.tool";
+		};
 		8DC2EF4F0486A6940098B216 /* MagicKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "MagicKit" */;
@@ -402,23 +429,6 @@
 			productReference = DDC92A8412618AE90012DE28 /* libMagicKit-iOS.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		DDC92C0412619C1E0012DE28 /* MagicKitTest */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DDC92C1812619C640012DE28 /* Build configuration list for PBXNativeTarget "MagicKitTest" */;
-			buildPhases = (
-				DDC92C0212619C1E0012DE28 /* Sources */,
-				DDC92C0312619C1E0012DE28 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DDC92C0F12619C430012DE28 /* PBXTargetDependency */,
-			);
-			name = MagicKitTest;
-			productName = MagicKitTest;
-			productReference = DDC92C0512619C1E0012DE28 /* MagicKitTest */;
-			productType = "com.apple.product-type.tool";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -444,7 +454,7 @@
 			targets = (
 				8DC2EF4F0486A6940098B216 /* MagicKit */,
 				DDC92A8312618AE90012DE28 /* MagicKit-iOS */,
-				DDC92C0412619C1E0012DE28 /* MagicKitTest */,
+				3DCAEFE1162D8BDE0036D9BF /* MagicKitTest */,
 			);
 		};
 /* End PBXProject section */
@@ -462,6 +472,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3DCAEFDE162D8BDE0036D9BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDC92C5A12619EBC0012DE28 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF540486A6940098B216 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -523,18 +541,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DDC92C0212619C1E0012DE28 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DDC92C5A12619EBC0012DE28 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DDC92C0F12619C430012DE28 /* PBXTargetDependency */ = {
+		3DCAEFF2162D8BF60036D9BF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8DC2EF4F0486A6940098B216 /* MagicKit */;
 			targetProxy = DDC92C0E12619C430012DE28 /* PBXContainerItemProxy */;
@@ -556,7 +566,6 @@
 		1DEB91AE08733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -566,9 +575,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MagicKit_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				LD_DYLIB_INSTALL_NAME = "@rpath";
+				INSTALL_PATH = "@rpath";
 				PRODUCT_NAME = MagicKit;
-				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -577,7 +585,6 @@
 		1DEB91AF08733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -585,9 +592,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MagicKit_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				LD_DYLIB_INSTALL_NAME = "@rpath";
+				INSTALL_PATH = "@rpath";
 				PRODUCT_NAME = MagicKit;
-				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -596,6 +602,7 @@
 		1DEB91B208733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -610,12 +617,52 @@
 		1DEB91B308733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3DCAEFEF162D8BDE0036D9BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MagicKitTest/MagicKitTest-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3DCAEFF0162D8BDE0036D9BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MagicKitTest/MagicKitTest-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -648,32 +695,6 @@
 			};
 			name = Release;
 		};
-		DDC92C0712619C1F0012DE28 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/";
-				PRODUCT_NAME = MagicKitTest;
-			};
-			name = Debug;
-		};
-		DDC92C0812619C1F0012DE28 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/";
-				PRODUCT_NAME = MagicKitTest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -695,20 +716,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		3DCAEFEE162D8BDE0036D9BF /* Build configuration list for PBXNativeTarget "MagicKitTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DCAEFEF162D8BDE0036D9BF /* Debug */,
+				3DCAEFF0162D8BDE0036D9BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DDC92A8D12618B050012DE28 /* Build configuration list for PBXNativeTarget "MagicKit-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DDC92A8512618AE90012DE28 /* Debug */,
 				DDC92A8612618AE90012DE28 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DDC92C1812619C640012DE28 /* Build configuration list for PBXNativeTarget "MagicKitTest" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DDC92C0712619C1F0012DE28 /* Debug */,
-				DDC92C0812619C1F0012DE28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
