@@ -141,12 +141,25 @@ const char *magicFilePathForiOS() {
     return [GEMagicKit magicForFileAtPath:path decompress:NO];
 }
 
++ (GEMagicResult *)magicForFileAtURL:(NSURL *)aURL {
+    return [GEMagicKit magicForFileAtURL:aURL decompress:NO];
+}
+
 + (GEMagicResult *)magicForData:(NSData *)data {
     return [GEMagicKit magicForData:data decompress:NO];
 }
 
 + (GEMagicResult *)magicForFileAtPath:(NSString *)path decompress:(BOOL)decompress {
     return [GEMagicKit magicForObject:path decompress:decompress];
+}
+
++ (GEMagicResult *)magicForFileAtURL:(NSURL *)aURL decompress:(BOOL)decompress {
+	if ([aURL isFileURL]) {
+		return [GEMagicKit magicForFileAtPath:[aURL path] decompress:decompress];
+	}
+	else {
+		return nil;
+	}
 }
 
 + (GEMagicResult *)magicForData:(NSData *)data decompress:(BOOL)decompress {

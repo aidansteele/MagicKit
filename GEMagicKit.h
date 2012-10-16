@@ -33,9 +33,11 @@
 }
 
 + (GEMagicResult *)magicForFileAtPath:(NSString *)path;
++ (GEMagicResult *)magicForFileAtURL:(NSURL *)aURL;
 + (GEMagicResult *)magicForData:(NSData *)data;
 
 + (GEMagicResult *)magicForFileAtPath:(NSString *)path decompress:(BOOL)decompress;
++ (GEMagicResult *)magicForFileAtURL:(NSURL *)aURL decompress:(BOOL)decompress;
 + (GEMagicResult *)magicForData:(NSData *)data decompress:(BOOL)decompress;
 
 @end
