@@ -33,10 +33,6 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #endif
 
-const char *magicFilePathForiOS() {
-    return [[[NSBundle mainBundle] pathForResource:@"magic" ofType:@"mgc"] UTF8String];
-}
-
 @interface GEMagicKit ()
 
 + (magic_t)sharedMagicCookie;
@@ -50,10 +46,11 @@ const char *magicFilePathForiOS() {
 + (magic_t)sharedMagicCookie {
     static magic_t sharedCookie = NULL;
     
+    const char *magicFile;
 #if TARGET_OS_MAC && !(TARGET_OS_IPHONE)
-    const char *magicFile = NULL;
+    magicFile = [[[NSBundle bundleForClass:[self class]] pathForResource:@"magic" ofType:@"mgc"] UTF8String];
 #else
-    const char *magicFile = magicFilePathForiOS();
+    magicFile = [[[NSBundle mainBundle] pathForResource:@"magic" ofType:@"mgc"] UTF8String];
 #endif
     
     if (sharedCookie == NULL) {
@@ -101,8 +98,8 @@ const char *magicFilePathForiOS() {
     }
     
     NSString *plainMimeType = [[mimeType componentsSeparatedByString:@";"] objectAtIndex:0];
-    NSString *typeIdentifier = (NSString *)UTTypeCreatePreferredIdentifierForTag(kUTTagClassMIMEType, (CFStringRef)plainMimeType, NULL);
-    NSArray *typeHierarchy = [GEMagicKit typeHierarchyForType:typeIdentifier];
+    NSString *typeIdentifier = [NSMakeCollectable(UTTypeCreatePreferredIdentifierForTag(kUTTagClassMIMEType, (CFStringRef)plainMimeType, NULL)) autorelease];
+    NSArray *typeHierarchy = [[NSArray arrayWithObject:typeIdentifier] arrayByAddingObjectsFromArray:[GEMagicKit typeHierarchyForType:typeIdentifier]];
     
     GEMagicResult *result = [[GEMagicResult alloc] initWithMimeType:mimeType 
                                                         description:description 
@@ -114,7 +111,7 @@ const char *magicFilePathForiOS() {
 + (NSArray *)typeHierarchyForType:(NSString *)uniformType {
     NSMutableArray *typeHierarchy = nil;
     
-    NSDictionary *typeDeclaration = (NSDictionary *)UTTypeCopyDeclaration((CFStringRef)uniformType);
+    NSDictionary *typeDeclaration = [NSMakeCollectable(UTTypeCopyDeclaration((CFStringRef)uniformType)) autorelease];
     id superTypes = [typeDeclaration objectForKey:(NSString *)kUTTypeConformsToKey];
     
     if ([superTypes isKindOfClass:[NSArray class]]) {
@@ -124,8 +121,11 @@ const char *magicFilePathForiOS() {
             NSArray *superTypeHierarchy = [GEMagicKit typeHierarchyForType:superType];
             [typeHierarchy addObjectsFromArray:superTypeHierarchy];
         }
-    } else {
-        typeHierarchy = [NSArray arrayWithObject:superTypes]; // superTypes is actually a string
+    } else if ([superTypes isKindOfClass:[NSString class]]) {
+        typeHierarchy = [NSArray arrayWithObject:superTypes];
+    }
+    else {
+        typeHierarchy = nil;
     }
     
     return typeHierarchy;
@@ -138,12 +138,25 @@ const char *magicFilePathForiOS() {
     return [GEMagicKit magicForFileAtPath:path decompress:NO];
 }
 
++ (GEMagicResult *)magicForFileAtURL:(NSURL *)aURL {
+    return [GEMagicKit magicForFileAtURL:aURL decompress:NO];
+}
+
 + (GEMagicResult *)magicForData:(NSData *)data {
     return [GEMagicKit magicForData:data decompress:NO];
 }
 
 + (GEMagicResult *)magicForFileAtPath:(NSString *)path decompress:(BOOL)decompress {
     return [GEMagicKit magicForObject:path decompress:decompress];
+}
+
++ (GEMagicResult *)magicForFileAtURL:(NSURL *)aURL decompress:(BOOL)decompress {
+	if ([aURL isFileURL]) {
+		return [GEMagicKit magicForFileAtPath:[aURL path] decompress:decompress];
+	}
+	else {
+		return nil;
+	}
 }
 
 + (GEMagicResult *)magicForData:(NSData *)data decompress:(BOOL)decompress {

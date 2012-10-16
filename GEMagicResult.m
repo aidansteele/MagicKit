@@ -34,13 +34,21 @@
 @dynamic uniformType;
 
 - (id)initWithMimeType:(NSString *)aMimeType description:(NSString *)aDescription typeHierarchy:(NSArray *)typeHierarchy {
-    if (self = [super init]) {
-        self->mimeType = [aMimeType retain];
-        self->description = [aDescription retain];
-        self->uniformTypeHierarchy = [typeHierarchy retain];
+    self = [super init];
+	if (self) {
+        self.mimeType = aMimeType;
+        self.description = aDescription;
+        self.uniformTypeHierarchy = typeHierarchy;
     }
-    
     return self;
+}
+
+- (void)dealloc;
+{
+    [mimeType release];
+    [description release];
+    [uniformTypeHierarchy release];
+    [super dealloc];
 }
 
 - (NSString *)uniformType {

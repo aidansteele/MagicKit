@@ -3,12 +3,14 @@ MagicKit.framework
 
 `MagicKit.framework` is an easy-to-use wrapper around the [`libmagic`](http://www.darwinsys.com/file/) file identification library. It provides a high-level Objective-C interface and deals in Foundation types (NSString, NSData, et al).
 
-`MagicKit.framework` is available for both OS X (as a framework) or iOS as a static library and header files. `MagicKit.framework` consists of a master class, `GEMagicKit`, and an intermediary class, `GEMagicResult`. The `GEMagicKit` master class has four class methods, listed below in descending order of convenience.
+`MagicKit.framework` is available for both OS X (as a framework) or iOS as a static library with header files. `MagicKit.framework` consists of a master class, `GEMagicKit`, and an intermediary class, `GEMagicResult`. The `GEMagicKit` master class has six class methods, listed below in descending order of convenience.
 
     + (GEMagicResult *)magicForFileAtPath:(NSString *)path;
+    + (GEMagicResult *)magicForFileAtURL:(NSURL *)aURL;
     + (GEMagicResult *)magicForData:(NSData *)data;
     
     + (GEMagicResult *)magicForFileAtPath:(NSString *)path decompress:(BOOL)decompress;
+    + (GEMagicResult *)magicForFileAtURL:(NSURL *)aURL decompress:(BOOL)decompress;
     + (GEMagicResult *)magicForData:(NSData *)data decompress:(BOOL)decompress;
 
 These methods all return the `GEMagicResult` intermediary class. The `GEMagicResult` class has four properties. These are `mimeType`, `description`, `uniformType` and `uniformTypeHierarchy`. the first three properties are `NSString` objects, the final returns an `NSArray` object.

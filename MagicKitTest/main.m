@@ -34,7 +34,7 @@ int main (int argc, const char * argv[]) {
         GEMagicResult *result = [GEMagicKit magicForFileAtPath:filePath];
         
         NSLog(@"MIME Type: %@", result.mimeType);
-        NSLog(@"Description %@", result.description);
+        NSLog(@"Description: %@", result.description);
         NSLog(@"UTIs: %@", result.uniformTypeHierarchy);
     } else {
         NSLog(@"Supply a path to the file whose type you wish to determine.");
