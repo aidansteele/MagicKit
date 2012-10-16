@@ -105,7 +105,7 @@
 		DD610A1D1271094B003CF804 /* GEMagicResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEMagicResult.h; sourceTree = "<group>"; };
 		DD610A1E1271094B003CF804 /* GEMagicResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GEMagicResult.m; sourceTree = "<group>"; };
 		DD610A2612710A45003CF804 /* MagicKitPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicKitPrivate.h; sourceTree = "<group>"; };
-		DD610A4412710B7B003CF804 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		DD610A4412710B7B003CF804 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		DD610A6612710C90003CF804 /* MagicKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicKit.h; sourceTree = "<group>"; };
 		DDC92978126187080012DE28 /* apprentice.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = apprentice.c; path = libmagic/apprentice.c; sourceTree = SOURCE_ROOT; };
 		DDC92979126187080012DE28 /* apptype.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = apptype.c; path = libmagic/apptype.c; sourceTree = SOURCE_ROOT; };
