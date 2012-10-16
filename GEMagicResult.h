@@ -32,9 +32,9 @@
     NSArray *uniformTypeHierarchy;
 }
 
-@property (nonatomic, readonly, retain) NSString *mimeType;
-@property (nonatomic, readonly, retain) NSString *description;
-@property (nonatomic, readonly, retain) NSString *uniformType;
-@property (nonatomic, readonly, retain) NSArray *uniformTypeHierarchy;
+@property (nonatomic, readonly, copy) NSString *mimeType;
+@property (nonatomic, readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSString *uniformType;
+@property (nonatomic, readonly, copy) NSArray *uniformTypeHierarchy;
 
 @end

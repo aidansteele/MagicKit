@@ -16,5 +16,9 @@
 @interface GEMagicResult ()
 
 - (id)initWithMimeType:(NSString *)aMimeType description:(NSString *)aDescription typeHierarchy:(NSArray *)typeHierarchy;
+@property (nonatomic, readwrite, copy) NSString *mimeType;
+@property (nonatomic, readwrite, copy) NSString *description;
+@property (nonatomic, readwrite, copy) NSString *uniformType;
+@property (nonatomic, readwrite, copy) NSArray *uniformTypeHierarchy;
 
 @end

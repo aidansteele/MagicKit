@@ -34,7 +34,7 @@
 #endif
 
 const char *magicFilePathForiOS() {
-    return [[[NSBundle mainBundle] pathForResource:@"magic" ofType:@"mgc"] UTF8String];
+    return [[[NSBundle mainBundle] pathForResource:@"magic" ofType:@"mgc"] fileSystemRepresentation];
 }
 
 @interface GEMagicKit ()
@@ -101,8 +101,8 @@ const char *magicFilePathForiOS() {
     }
     
     NSString *plainMimeType = [[mimeType componentsSeparatedByString:@";"] objectAtIndex:0];
-    NSString *typeIdentifier = (NSString *)UTTypeCreatePreferredIdentifierForTag(kUTTagClassMIMEType, (CFStringRef)plainMimeType, NULL);
-    NSArray *typeHierarchy = [GEMagicKit typeHierarchyForType:typeIdentifier];
+    NSString *typeIdentifier = [NSMakeCollectable(UTTypeCreatePreferredIdentifierForTag(kUTTagClassMIMEType, (CFStringRef)plainMimeType, NULL)) autorelease];
+    NSArray *typeHierarchy = [[NSArray arrayWithObject:typeIdentifier] arrayByAddingObjectsFromArray:[GEMagicKit typeHierarchyForType:typeIdentifier]];
     
     GEMagicResult *result = [[GEMagicResult alloc] initWithMimeType:mimeType 
                                                         description:description 
@@ -114,7 +114,7 @@ const char *magicFilePathForiOS() {
 + (NSArray *)typeHierarchyForType:(NSString *)uniformType {
     NSMutableArray *typeHierarchy = nil;
     
-    NSDictionary *typeDeclaration = (NSDictionary *)UTTypeCopyDeclaration((CFStringRef)uniformType);
+    NSDictionary *typeDeclaration = [NSMakeCollectable(UTTypeCopyDeclaration((CFStringRef)uniformType)) autorelease];
     id superTypes = [typeDeclaration objectForKey:(NSString *)kUTTypeConformsToKey];
     
     if ([superTypes isKindOfClass:[NSArray class]]) {
@@ -127,9 +127,9 @@ const char *magicFilePathForiOS() {
     } else if ([superTypes isKindOfClass:[NSString class]]) {
         typeHierarchy = [NSArray arrayWithObject:superTypes];
     }
-	else {
-		typeHierarchy = nil;
-	}
+    else {
+        typeHierarchy = nil;
+    }
     
     return typeHierarchy;
 }
