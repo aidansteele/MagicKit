@@ -29,6 +29,7 @@
 @interface GEMagicResult : NSObject {
     NSString *mimeType;
     NSString *description;
+    NSString *uniformType;
     NSArray *uniformTypeHierarchy;
 }
 
