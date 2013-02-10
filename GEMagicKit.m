@@ -48,9 +48,9 @@
     
     const char *magicFile;
 #if TARGET_OS_MAC && !(TARGET_OS_IPHONE)
-    magicFile = [[[NSBundle bundleForClass:[self class]] pathForResource:@"magic" ofType:@"mgc"] UTF8String];
+    magicFile = [[[NSBundle bundleForClass:[self class]] pathForResource:@"magic" ofType:@"mgc"] fileSystemRepresentation];
 #else
-    magicFile = [[[NSBundle mainBundle] pathForResource:@"magic" ofType:@"mgc"] UTF8String];
+    magicFile = [[[NSBundle mainBundle] pathForResource:@"magic" ofType:@"mgc"] fileSystemRepresentation];
 #endif
     
     if (sharedCookie == NULL) {
@@ -86,11 +86,11 @@
         rawOutput = magic_buffer(cookie, [object bytes], [object length]);
         mimeType = [NSString stringWithUTF8String:rawOutput];
     } else if ([object isKindOfClass:[NSString class]]) {
-        rawOutput = magic_file(cookie, [object UTF8String]);
+        rawOutput = magic_file(cookie, [object fileSystemRepresentation]);
         description = [NSString stringWithUTF8String:rawOutput];
         
         magic_setflags(cookie, flags|MAGIC_MIME);
-        rawOutput = magic_file(cookie, [object UTF8String]);
+        rawOutput = magic_file(cookie, [object fileSystemRepresentation]);
         mimeType = [NSString stringWithUTF8String:rawOutput];
     } else {
         NSException *exception = [NSException exceptionWithName:@"MagicKit" reason:@"Not a valid object (data / path string)" userInfo:nil];
