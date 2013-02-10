@@ -103,23 +103,20 @@
 }
 
 + (NSArray *)typeHierarchyForType:(NSString *)uniformType {
-    NSMutableArray *typeHierarchy = nil;
+    NSArray *typeHierarchy = nil;
     
     NSDictionary *typeDeclaration = [NSMakeCollectable(UTTypeCopyDeclaration((CFStringRef)uniformType)) autorelease];
     id superTypes = [typeDeclaration objectForKey:(NSString *)kUTTypeConformsToKey];
     
     if ([superTypes isKindOfClass:[NSArray class]]) {
-        typeHierarchy = [NSMutableArray arrayWithArray:superTypes];
+        NSMutableArray *mutableTypeHierarchy = [NSMutableArray arrayWithArray:superTypes];
         
-        for (NSString *superType in superTypes) {
-            NSArray *superTypeHierarchy = [GEMagicKit typeHierarchyForType:superType];
-            [typeHierarchy addObjectsFromArray:superTypeHierarchy];
-        }
+        for (NSString *superType in superTypes)
+            [mutableTypeHierarchy addObjectsFromArray:[GEMagicKit typeHierarchyForType:superType]];
+
+        typeHierarchy = mutableTypeHierarchy;
     } else if ([superTypes isKindOfClass:[NSString class]]) {
         typeHierarchy = [NSArray arrayWithObject:superTypes];
-    }
-    else {
-        typeHierarchy = nil;
     }
     
     return typeHierarchy;
