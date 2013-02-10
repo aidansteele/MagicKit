@@ -46,15 +46,15 @@
 + (magic_t)sharedMagicCookie {
     static magic_t sharedCookie = NULL;
     
-    const char *magicFile;
-#if TARGET_OS_MAC && !(TARGET_OS_IPHONE)
-    magicFile = [[[NSBundle bundleForClass:[self class]] pathForResource:@"magic" ofType:@"mgc"] fileSystemRepresentation];
-#else
-    magicFile = [[[NSBundle mainBundle] pathForResource:@"magic" ofType:@"mgc"] fileSystemRepresentation];
-#endif
-    
     if (sharedCookie == NULL) {
         sharedCookie = magic_open(MAGIC_NONE);
+
+        const char *magicFile;
+#if TARGET_OS_MAC && !(TARGET_OS_IPHONE)
+        magicFile = [[[NSBundle bundleForClass:[self class]] pathForResource:@"magic" ofType:@"mgc"] fileSystemRepresentation];
+#else
+        magicFile = [[[NSBundle mainBundle] pathForResource:@"magic" ofType:@"mgc"] fileSystemRepresentation];
+#endif
         
         if (sharedCookie == NULL || magic_load(sharedCookie, magicFile) == -1) {
             [NSException raise:@"MagicKit" format:@"There was an error opening the magic database: %s", strerror(errno)];
