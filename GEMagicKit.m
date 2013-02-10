@@ -24,7 +24,6 @@
 */
 #import "GEMagicKit.h"
 #import "GEMagicResult.h"
-#import "MagicKitPrivate.h"
 #import "magic.h"
 
 #if TARGET_OS_MAC && !(TARGET_OS_IPHONE)

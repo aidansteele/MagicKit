@@ -15,7 +15,6 @@
 		DD2BBE3D1262DBD3001B55D4 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2BBE3C1262DBD3001B55D4 /* CoreServices.framework */; };
 		DD610A1F1271094B003CF804 /* GEMagicResult.h in Headers */ = {isa = PBXBuildFile; fileRef = DD610A1D1271094B003CF804 /* GEMagicResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD610A201271094B003CF804 /* GEMagicResult.m in Sources */ = {isa = PBXBuildFile; fileRef = DD610A1E1271094B003CF804 /* GEMagicResult.m */; };
-		DD610A2712710A45003CF804 /* MagicKitPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = DD610A2612710A45003CF804 /* MagicKitPrivate.h */; };
 		DD610A4512710B7B003CF804 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD610A4412710B7B003CF804 /* MobileCoreServices.framework */; };
 		DD610A6712710C90003CF804 /* MagicKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DD610A6612710C90003CF804 /* MagicKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD610A6812710C90003CF804 /* MagicKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DD610A6612710C90003CF804 /* MagicKit.h */; };
@@ -104,7 +103,6 @@
 		DD2BBE3C1262DBD3001B55D4 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		DD610A1D1271094B003CF804 /* GEMagicResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEMagicResult.h; sourceTree = "<group>"; };
 		DD610A1E1271094B003CF804 /* GEMagicResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GEMagicResult.m; sourceTree = "<group>"; };
-		DD610A2612710A45003CF804 /* MagicKitPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicKitPrivate.h; sourceTree = "<group>"; };
 		DD610A4412710B7B003CF804 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		DD610A6612710C90003CF804 /* MagicKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicKit.h; sourceTree = "<group>"; };
 		DDC92978126187080012DE28 /* apprentice.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = apprentice.c; path = libmagic/apprentice.c; sourceTree = SOURCE_ROOT; };
@@ -229,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				DD610A6612710C90003CF804 /* MagicKit.h */,
-				DD610A2612710A45003CF804 /* MagicKitPrivate.h */,
 				DDC92C1712619C640012DE28 /* MagicKit */,
 				DDC92977126186FD0012DE28 /* libmagic */,
 				DDC92C1912619C6A0012DE28 /* MagicKit Test */,
@@ -350,7 +347,6 @@
 				DDC929BD1261872F0012DE28 /* config.h in Headers */,
 				DDC929DF126187DA0012DE28 /* GEMagicKit.h in Headers */,
 				DD610A1F1271094B003CF804 /* GEMagicResult.h in Headers */,
-				DD610A2712710A45003CF804 /* MagicKitPrivate.h in Headers */,
 				DD610A6712710C90003CF804 /* MagicKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

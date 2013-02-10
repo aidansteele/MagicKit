@@ -24,7 +24,6 @@
  */
 
 #import "GEMagicResult.h"
-#import "MagicKitPrivate.h"
 
 @implementation GEMagicResult
 
@@ -36,11 +35,11 @@
 - (id)initWithMimeType:(NSString *)aMimeType description:(NSString *)aDescription typeHierarchy:(NSArray *)typeHierarchy {
     self = [super init];
 	if (self) {
-        self.mimeType = aMimeType;
-        self.description = aDescription;
-        self.uniformTypeHierarchy = typeHierarchy;
+        mimeType = [aMimeType copy];
+        description = [aDescription copy];
+        uniformTypeHierarchy = [typeHierarchy copy];
         if (self.uniformTypeHierarchy.count)
-            self.uniformType = [self.uniformTypeHierarchy objectAtIndex:0];
+            uniformType = [[self.uniformTypeHierarchy objectAtIndex:0] retain];
     }
     return self;
 }
