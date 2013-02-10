@@ -57,10 +57,7 @@
         sharedCookie = magic_open(MAGIC_NONE);
         
         if (sharedCookie == NULL || magic_load(sharedCookie, magicFile) == -1) {
-            NSString *errorString = [NSString stringWithFormat:@"There was an error opening the magic database: %s", strerror(errno)];
-            NSException *exception = [NSException exceptionWithName:@"MagicKit" reason:errorString userInfo:nil];
-            
-            [exception raise];
+            [NSException raise:@"MagicKit" format:@"There was an error opening the magic database: %s", strerror(errno)];
         }
     }
     
@@ -93,8 +90,7 @@
         rawOutput = magic_file(cookie, [object fileSystemRepresentation]);
         mimeType = [NSString stringWithUTF8String:rawOutput];
     } else {
-        NSException *exception = [NSException exceptionWithName:@"MagicKit" reason:@"Not a valid object (data / path string)" userInfo:nil];
-        [exception raise];
+        [NSException raise:@"MagicKit" format:@"Not a valid object (data / path string): %@", object];
     }
     
     NSString *plainMimeType = [[mimeType componentsSeparatedByString:@";"] objectAtIndex:0];
