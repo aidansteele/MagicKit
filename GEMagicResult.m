@@ -24,21 +24,22 @@
  */
 
 #import "GEMagicResult.h"
-#import "MagicKitPrivate.h"
 
 @implementation GEMagicResult
 
 @synthesize mimeType;
 @synthesize description;
+@synthesize uniformType;
 @synthesize uniformTypeHierarchy;
-@dynamic uniformType;
 
 - (id)initWithMimeType:(NSString *)aMimeType description:(NSString *)aDescription typeHierarchy:(NSArray *)typeHierarchy {
     self = [super init];
 	if (self) {
-        self.mimeType = aMimeType;
-        self.description = aDescription;
-        self.uniformTypeHierarchy = typeHierarchy;
+        mimeType = [aMimeType copy];
+        description = [aDescription copy];
+        uniformTypeHierarchy = [typeHierarchy copy];
+        if (self.uniformTypeHierarchy.count)
+            uniformType = [[self.uniformTypeHierarchy objectAtIndex:0] retain];
     }
     return self;
 }
@@ -47,12 +48,9 @@
 {
     [mimeType release];
     [description release];
+    [uniformType release];
     [uniformTypeHierarchy release];
     [super dealloc];
-}
-
-- (NSString *)uniformType {
-    return [self.uniformTypeHierarchy objectAtIndex:0];
 }
 
 @end

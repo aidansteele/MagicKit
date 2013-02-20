@@ -24,7 +24,6 @@
 */
 #import "GEMagicKit.h"
 #import "GEMagicResult.h"
-#import "MagicKitPrivate.h"
 #import "magic.h"
 
 #if TARGET_OS_MAC && !(TARGET_OS_IPHONE)
@@ -37,6 +36,7 @@
 
 + (magic_t)sharedMagicCookie;
 + (GEMagicResult *)magicForObject:(id)object decompress:(BOOL)decompress;
++ (NSString *)rawMagicOutputForObject:(id)dataOrFilePath cookie:(magic_t)cookie flags:(int)flags;
 + (NSArray *)typeHierarchyForType:(NSString *)uniformType;
 
 @end
@@ -46,21 +46,18 @@
 + (magic_t)sharedMagicCookie {
     static magic_t sharedCookie = NULL;
     
-    const char *magicFile;
-#if TARGET_OS_MAC && !(TARGET_OS_IPHONE)
-    magicFile = [[[NSBundle bundleForClass:[self class]] pathForResource:@"magic" ofType:@"mgc"] UTF8String];
-#else
-    magicFile = [[[NSBundle mainBundle] pathForResource:@"magic" ofType:@"mgc"] UTF8String];
-#endif
-    
     if (sharedCookie == NULL) {
         sharedCookie = magic_open(MAGIC_NONE);
+
+        const char *magicFile;
+#if TARGET_OS_MAC && !(TARGET_OS_IPHONE)
+        magicFile = [[[NSBundle bundleForClass:[self class]] pathForResource:@"magic" ofType:@"mgc"] fileSystemRepresentation];
+#else
+        magicFile = [[[NSBundle mainBundle] pathForResource:@"magic" ofType:@"mgc"] fileSystemRepresentation];
+#endif
         
         if (sharedCookie == NULL || magic_load(sharedCookie, magicFile) == -1) {
-            NSString *errorString = [NSString stringWithFormat:@"There was an error opening the magic database: %s", strerror(errno)];
-            NSException *exception = [NSException exceptionWithName:@"MagicKit" reason:errorString userInfo:nil];
-            
-            [exception raise];
+            [NSException raise:@"MagicKit" format:@"There was an error opening the magic database: %s", strerror(errno)];
         }
     }
     
@@ -68,34 +65,15 @@
 }
 
 + (GEMagicResult *)magicForObject:(id)object decompress:(BOOL)decompress {
-    int flags = MAGIC_NONE;
-    if (decompress) flags |= MAGIC_COMPRESS;
-    
-    NSString *description = nil;
-    NSString *mimeType = nil;
-    
+    int baseFlags = MAGIC_NONE;
+    if (decompress) baseFlags |= MAGIC_COMPRESS;
+
     magic_t cookie = [GEMagicKit sharedMagicCookie];
-    magic_setflags(cookie, flags);
-    const char *rawOutput = NULL;
     
-    if ([object isKindOfClass:[NSData class]]) {
-        rawOutput = magic_buffer(cookie, [object bytes], [object length]);
-        description = [NSString stringWithUTF8String:rawOutput];
-        
-        magic_setflags(cookie, flags|MAGIC_MIME);
-        rawOutput = magic_buffer(cookie, [object bytes], [object length]);
-        mimeType = [NSString stringWithUTF8String:rawOutput];
-    } else if ([object isKindOfClass:[NSString class]]) {
-        rawOutput = magic_file(cookie, [object UTF8String]);
-        description = [NSString stringWithUTF8String:rawOutput];
-        
-        magic_setflags(cookie, flags|MAGIC_MIME);
-        rawOutput = magic_file(cookie, [object UTF8String]);
-        mimeType = [NSString stringWithUTF8String:rawOutput];
-    } else {
-        NSException *exception = [NSException exceptionWithName:@"MagicKit" reason:@"Not a valid object (data / path string)" userInfo:nil];
-        [exception raise];
-    }
+    NSString *description = [self rawMagicOutputForObject:object cookie:cookie flags:baseFlags];
+    NSString *mimeType = [self rawMagicOutputForObject:object cookie:cookie flags:(baseFlags | MAGIC_MIME)];
+    if (!description || !mimeType)
+        return nil;
     
     NSString *plainMimeType = [[mimeType componentsSeparatedByString:@";"] objectAtIndex:0];
     NSString *typeIdentifier = [NSMakeCollectable(UTTypeCreatePreferredIdentifierForTag(kUTTagClassMIMEType, (CFStringRef)plainMimeType, NULL)) autorelease];
@@ -108,24 +86,36 @@
     return [result autorelease];
 }
 
++ (NSString *)rawMagicOutputForObject:(id)dataOrFilePath cookie:(magic_t)cookie flags:(int)flags {
+    const char *rawOutput = NULL;
+
+    magic_setflags(cookie, flags);
+    if ([dataOrFilePath isKindOfClass:[NSData class]]) {
+        rawOutput = magic_buffer(cookie, [dataOrFilePath bytes], [dataOrFilePath length]);
+    } else if ([dataOrFilePath isKindOfClass:[NSString class]]) {
+        rawOutput = magic_file(cookie, [dataOrFilePath fileSystemRepresentation]);
+    } else {
+        [NSException raise:@"MagicKit" format:@"Invalid object (expected data or path string): %@", dataOrFilePath];
+    }
+
+    return rawOutput ? [NSString stringWithUTF8String:rawOutput] : nil;
+}
+
 + (NSArray *)typeHierarchyForType:(NSString *)uniformType {
-    NSMutableArray *typeHierarchy = nil;
+    NSArray *typeHierarchy = nil;
     
     NSDictionary *typeDeclaration = [NSMakeCollectable(UTTypeCopyDeclaration((CFStringRef)uniformType)) autorelease];
     id superTypes = [typeDeclaration objectForKey:(NSString *)kUTTypeConformsToKey];
     
     if ([superTypes isKindOfClass:[NSArray class]]) {
-        typeHierarchy = [NSMutableArray arrayWithArray:superTypes];
+        NSMutableArray *mutableTypeHierarchy = [NSMutableArray arrayWithArray:superTypes];
         
-        for (NSString *superType in superTypes) {
-            NSArray *superTypeHierarchy = [GEMagicKit typeHierarchyForType:superType];
-            [typeHierarchy addObjectsFromArray:superTypeHierarchy];
-        }
+        for (NSString *superType in superTypes)
+            [mutableTypeHierarchy addObjectsFromArray:[GEMagicKit typeHierarchyForType:superType]];
+
+        typeHierarchy = mutableTypeHierarchy;
     } else if ([superTypes isKindOfClass:[NSString class]]) {
         typeHierarchy = [NSArray arrayWithObject:superTypes];
-    }
-    else {
-        typeHierarchy = nil;
     }
     
     return typeHierarchy;
@@ -153,8 +143,7 @@
 + (GEMagicResult *)magicForFileAtURL:(NSURL *)aURL decompress:(BOOL)decompress {
 	if ([aURL isFileURL]) {
 		return [GEMagicKit magicForFileAtPath:[aURL path] decompress:decompress];
-	}
-	else {
+	} else {
 		return nil;
 	}
 }
